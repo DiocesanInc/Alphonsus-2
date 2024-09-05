@@ -1,0 +1,39 @@
+footer .site-info {
+  padding-block: 25px;
+
+  .limit-width {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+
+    .social-media {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      a {
+        border: 1px solid white;
+        border-radius: 100%;
+        display: block;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

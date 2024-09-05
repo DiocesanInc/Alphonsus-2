@@ -1,0 +1,57 @@
+.qtip.simcal-event-bubble {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+
+  .simcal-events {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .event-day {
+    font-weight: bold;
+  }
+
+  .event-title {
+    font-family: var(--font-main);
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.qtip.simcal-event-bubble .close-button {
+  display: none;
+}
+
+@media screen and (max-width: 499px) {
+  .qtip.simcal-event-bubble {
+    max-height: 50vh;
+    overflow: auto;
+    left: 20px !important;
+    right: 20px !important;
+    max-width: none;
+
+    .close-button {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #718289;
+      transition: var(--tr-color);
+
+      &:hover {
+        color: var(--clr-primary);
+      }
+    }
+  }
+
+  body:has(.qtip-focus) #primary::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+}

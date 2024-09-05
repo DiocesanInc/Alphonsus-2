@@ -1,0 +1,96 @@
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #404040;
+  opacity: 0.6;
+  z-index: 9999;
+}
+.lightbox {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  border-radius: 10px;
+  transform: scale(1, 0);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  &.open {
+    transform: scale(1);
+  }
+  .lightbox-close {
+    cursor: pointer;
+    &::before,
+    &::after {
+      width: 5px;
+      height: 20px;
+      right: 20px;
+      top: 15px;
+      background: #000000;
+      position: absolute;
+      content: "";
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .lightbox-image {
+    width: 100%;
+    height: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px 0 0 0;
+  }
+  .lightbox-content {
+    width: 100%;
+    height: 75%;
+    padding: 0 2rem;
+    border-radius: 0 10px 10px 0;
+    .lightbox-title,
+    .lightbox-contact-persons,
+    .contact-form-wrapper {
+      text-align: center;
+    }
+    .contact-form {
+      padding-bottom: 3rem;
+    }
+    .lightbox-link {
+      margin-top: 1rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .lightbox {
+    flex-direction: row;
+    .lightbox-image,
+    .lightbox-content {
+      width: 50%;
+      height: 100%;
+    }
+    .lightbox-image {
+      border-radius: 10px 0 0 10px;
+      position: sticky;
+      top: 0;
+    }
+    .lightbox-content {
+      padding: 0 3rem;
+    }
+  }
+}

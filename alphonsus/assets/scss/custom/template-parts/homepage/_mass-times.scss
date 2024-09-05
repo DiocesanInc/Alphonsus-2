@@ -1,0 +1,120 @@
+.mass-times-container {
+  --num-cols: 1;
+  --gap: 20px;
+
+  position: relative;
+
+  > .limit-width-laptop-up {
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    gap: var(--gap);
+  }
+
+  .bg-img {
+    position: absolute;
+    inset: 0 -40% calc(-1 * var(--homepage-section-spacing)) 40%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    opacity: 0.03;
+    z-index: -1;
+
+    @media screen and (min-width: $tablet) {
+      inset: 0 0 calc(-1 * var(--homepage-section-spacing)) 50%;
+    }
+
+    @media screen and (min-width: $laptop) {
+      background-position: bottom right;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    --num-cols: 2;
+    --gap: clamp(20px, 4vw, 200px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    --gap: clamp(50px, 5vw, 100px);
+  }
+
+  .mass-times-left {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    order: 1;
+
+    @media screen and (min-width: $laptop) {
+      order: unset;
+    }
+
+    .mass-times-image-wrapper img {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .mass-times-image-wrapper:nth-child(2) {
+      margin-top: 50px;
+    }
+  }
+
+  .mass-times-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-inline: 10px;
+
+    @media screen and (min-width: $laptop) {
+      padding-top: 85px;
+    }
+
+    .mass-times-heading {
+      width: 100%;
+      margin-top: 0;
+      padding-block: 0;
+      font-size: clamp(36px, 4.5vw, 48px);
+      text-align: left;
+    }
+
+    .mass-times-subheading {
+      font-size: 20px;
+      margin-block: 0 40px;
+      width: 100%;
+    }
+
+    .mass-times-schedule {
+      --num-cols: 1;
+      --gap: 50px;
+
+      margin-block: 0 30px;
+      display: grid;
+      grid-template-columns: repeat(var(--num-cols), 1fr);
+      gap: var(--gap);
+
+      @media screen and (min-width: $tablet) {
+        --num-cols: 2;
+      }
+
+      .mass-times-section-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: var(--font-main);
+        margin-block: 0 8px;
+      }
+
+      .times {
+        span {
+          font-size: 18px;
+        }
+
+        .time {
+          margin-bottom: 8px;
+
+          .notes {
+            color: var(--clr-primary);
+          }
+        }
+      }
+    }
+  }
+}

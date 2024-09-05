@@ -1,0 +1,16 @@
+.page-template-mass-times .mass-times-schedule {
+  position: relative;
+
+  .bg-img {
+    position: absolute;
+    inset: 0 0 calc(-1 * var(--homepage-section-spacing)) 0;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    opacity: 0.03;
+    z-index: -1;
+
+    @media screen and (min-width: $tablet) {
+      inset: 0 0 calc(-1 * var(--homepage-section-spacing)) 50%;
+    }
+  }
+}

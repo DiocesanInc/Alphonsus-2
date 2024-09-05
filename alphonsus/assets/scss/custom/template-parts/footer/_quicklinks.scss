@@ -1,0 +1,19 @@
+.quicklinks-container {
+  #footer-quicklinks {
+    padding: 0;
+    margin: 0 0 0 20px;
+    list-style: disc;
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols, 1), 1fr);
+    column-gap: 90px;
+    row-gap: 30px;
+
+    @media screen and (min-width: $laptop) {
+      --num-cols: 2;
+    }
+
+    li::marker {
+      color: var(--clr-secondary);
+    }
+  }
+}

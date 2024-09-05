@@ -1,0 +1,18 @@
+.teaser-box {
+  .teaser-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .teaser-content-wrapper {
+    .teaser-content {
+      height: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+  .links-container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

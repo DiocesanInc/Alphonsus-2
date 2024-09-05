@@ -1,0 +1,21 @@
+.gallery-container {
+    margin-top: var(--homepage-section-spacing);
+
+    z-index: 10;
+    position: relative;
+    .gallery-heading {
+        font-size: clamp(25px, 2.5vw, 40px);
+        margin-block: 0 50px;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    @media screen and (min-width: $laptop) {
+        max-width: 75%;
+        margin-inline: auto;
+        .gallery-heading {
+            margin-left: 20px;
+            margin-bottom: 65px;
+        }
+    }
+}

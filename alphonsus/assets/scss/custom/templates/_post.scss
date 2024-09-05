@@ -1,0 +1,16 @@
+.post {
+  .featured-image {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      float: left;
+      margin-right: 2rem;
+      width: initial;
+    }
+  }
+
+  .post-title {
+    margin-top: 0;
+  }
+}

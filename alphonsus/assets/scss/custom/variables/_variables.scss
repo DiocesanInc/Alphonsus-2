@@ -1,0 +1,35 @@
+:root {
+  --animation-speed: 0.3s;
+  --header-height: calc(
+    var(--max-logo-height, 72px) + var(--top-bar-height, 0px) +
+      var(--header-extra-height, 25px)
+  );
+  &:has(#header-top-bar.hidden) {
+    --top-bar-height: 0px;
+  }
+  --hero-height: 60vh;
+  --page-header-height: 30vh;
+  --grey: #efefef;
+  --overlay-color: #3c3c3c;
+  --scale: scale(1.1);
+  --tr-background: background var(--animation-speed) ease;
+  --tr-transform: transform var(--animation-speed) ease;
+  --tr-color: color var(--animation-speed) ease;
+  --tr-height: height var(--animation-speed) ease;
+  --tr-width: width var(--animation-speed) ease;
+  --tr-scale: scale var(--animation-speed) ease;
+  --tr-left: left var(--animation-speed) ease;
+  --tr-opacity: opacity var(--animation-speed) ease;
+  --content-inset: 0px; //if you want to set this to 0 keep the px in order for the calc() functions to remain working
+  --homepage-section-spacing: 40px;
+  @media screen and (min-width: $laptop) {
+    --content-inset: 0px;
+    --homepage-section-spacing: 100px;
+  }
+  @media screen and (min-width: $desktop) {
+    --content-inset: 0px;
+    --homepage-section-spacing: 155px;
+    --top-bar-height: 45px;
+    --header-extra-height: 25px;
+  }
+}

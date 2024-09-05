@@ -1,0 +1,27 @@
+footer {
+  @import "quicklinks";
+  @import "content";
+  @import "contact";
+
+  --num-cols: 1;
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    padding-block: 100px;
+    justify-items: start;
+    gap: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    --num-cols: 2;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --num-cols: 3;
+
+    .footer-wrapper {
+      justify-items: center;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.top-bar {
+  background-color: var(--bg-clr, black);
+  width: 100%;
+  color: white;
+  padding-block: 10px;
+  display: none;
+  transition: all 0.4s ease;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+
+  &.hidden {
+    padding: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  a {
+    color: white;
+  }
+
+  .top-bar-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .top-bar-left,
+    .top-bar-right {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .top-bar-left {
+      gap: 40px;
+
+      i {
+        color: var(--clr-secondary);
+      }
+    }
+
+    .top-bar-right {
+      gap: 40px;
+
+      i {
+        color: white;
+      }
+
+      .social-media {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+form.search-form {
+    display: inline-flex;
+    position: relative;
+    .search-field {
+        border-color: var(--clr-quaternary);
+        background: white;
+        line-height: 1;
+        color: black;
+        border-radius: 0;
+        outline: none;
+    }
+    .search-submit {
+        cursor: pointer;
+        position: absolute;
+        background: var(--clr-quaternary);
+        top: 0;
+        bottom: 0;
+        padding: 0 7px;
+        border-radius: 0;
+        color: white;
+        right: 0;
+        border: none;
+        border-left: 1px solid var(--clr-quaternary);
+        transition: var(--tr-color), var(--tr-background);
+
+        &:hover {
+            background: transparent;
+            color: var(--clr-quaternary);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.hidden-mobile {
+    display: none !important;
+    @media screen and (min-width: $laptop) {
+        display: block !important;
+    }
+}
+
+.hidden-laptop {
+    display: block !important;
+    @media screen and (min-width: $laptop) {
+        display: none !important;
+    }
+}

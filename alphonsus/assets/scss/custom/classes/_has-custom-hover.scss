@@ -1,0 +1,17 @@
+.has-custom-hover {
+    position: relative;
+}
+.has-custom-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--clr-primary);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.has-custom-hover:hover::after {
+    transform: scale(1);
+}

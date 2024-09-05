@@ -1,0 +1,63 @@
+.ministry-funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    &.entry-content::before,
+    &.entry-content::after {
+        display: none;
+    }
+    .ministry-group-wrapper {
+        overflow: hidden;
+        height: 20rem;
+
+        &:hover {
+            .ministry-group-link {
+                transform: scale(1.1);
+                text-decoration: none;
+            }
+        }
+        .ministry-group-link {
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            transition: var(--tr-transform);
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(180deg, black 75%, transparent);
+                opacity: 0.25;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ministry-funnel {
+        flex-direction: row;
+        .ministry-group-wrapper {
+            aspect-ratio: 370 / 230;
+            width: calc(50% - 2rem);
+            height: unset;
+        }
+    }
+}

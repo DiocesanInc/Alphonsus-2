@@ -1,0 +1,17 @@
+.alertWrapper .alertContainer {
+    background: white;
+}
+
+.alertWrapper .alertClose > div {
+    background: var(--clr-primary, black);
+    transition: background 0.4s ease;
+}
+
+.alertWrapper .alertClose:hover > div {
+    background: var(--clr-secondary, black);
+}
+
+.alertPopupButton .alertShow {
+    cursor: pointer;
+    background: var(--clr-primary, #bf0000e6);
+}

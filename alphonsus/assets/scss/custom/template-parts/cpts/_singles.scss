@@ -1,0 +1,29 @@
+.single-container article {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    .single-content {
+        width: 100%;
+    }
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0 auto 2rem;
+    .single-container {
+        display: flex;
+        width: 100%;
+        margin-top: 2.75rem;
+        .single-thumbnail {
+            float: left;
+            margin: 0 1.5rem 1.5rem 0;
+            max-width: 25rem;
+        }
+        .single-content {
+            .single-title {
+                margin-top: 0 !important;
+            }
+        }
+    }
+}

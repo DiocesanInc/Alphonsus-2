@@ -1,0 +1,10 @@
+.site-branding {
+  .header-logo-link {
+    display: block;
+    height: var(--max-logo-height);
+    .header-logo {
+      height: var(--max-logo-height, calc(var(--header-height) - 2rem));
+      max-width: none;
+    }
+  }
+}

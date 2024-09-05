@@ -1,0 +1,123 @@
+.slick-list {
+  height: 100%;
+  .slick-track {
+    height: 100%;
+  }
+}
+
+.envira-gallery-wrap .slick-list {
+  overflow: hidden;
+}
+
+.slick-arrow {
+  background: var(--clr-tertiary-st);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-tertiary-st);
+  transition: var(--tr-background), var(--tr-color);
+  &::before,
+  &::after {
+    opacity: 1;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  &.slick-prev {
+    left: 25px;
+    z-index: 1;
+    &::before {
+      content: "\f053";
+    }
+  }
+  &.slick-next {
+    right: 25px;
+    &::before {
+      content: "\f054";
+    }
+  }
+  &:focus {
+    background: var(--clr-tertiary-st);
+    border-color: var(--clr-tertiary-st);
+    &::before,
+    &::after {
+      color: white;
+    }
+  }
+  &:hover {
+    background: white;
+    border-color: var(--clr-tertiary-st);
+    &::before,
+    &::after {
+      color: var(--clr-tertiary-st);
+    }
+  }
+}
+
+.slick-slider.same-height {
+  .slick-track {
+    height: auto;
+    display: flex;
+    .slick-slide {
+      height: inherit;
+    }
+  }
+}
+
+.slick-slider.equal-height {
+  .slick-track {
+    display: flex !important;
+    .slick-slide {
+      height: auto !important;
+    }
+  }
+}
+
+.slider-nav {
+  margin-bottom: 40px;
+}
+.slick-dots {
+  --dot-size: 15px;
+
+  bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  li {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    margin-inline: 0;
+
+    button {
+      width: var(--dot-size);
+      height: var(--dot-size);
+      padding: 0;
+    }
+
+    button::before {
+      content: "";
+      width: var(--dot-size);
+      height: var(--dot-size);
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: var(--tr-opacity);
+      opacity: 1;
+    }
+
+    button:hover::before {
+      opacity: 0.75;
+    }
+  }
+
+  li.slick-active,
+  li.slick-dot-active {
+    button::before {
+      background: white;
+      opacity: 1;
+    }
+    button:hover::before {
+      opacity: 0.75;
+    }
+  }
+}

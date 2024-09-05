@@ -1,0 +1,9 @@
+@import "footer";
+@import "site-info";
+
+.footer-content,
+.quicklinks-container,
+.footer-contact {
+  display: grid;
+  grid-template-rows: 120px auto;
+}

@@ -1,0 +1,24 @@
+body,
+html {
+  overflow-x: hidden;
+}
+
+body:not(.page-template-page-landing) .content-area {
+  padding: var(--content-inset);
+}
+
+body.admin-bar #masthead {
+  margin-top: 32px;
+}
+img {
+  border-radius: 10px;
+}
+
+::selection {
+  background: var(--clr-primary);
+  color: white;
+}
+
+.content-area[data-has-page-header="false"] {
+  margin-top: calc(var(--header-height) + 3rem);
+}

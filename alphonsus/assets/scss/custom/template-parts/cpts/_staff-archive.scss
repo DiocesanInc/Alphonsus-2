@@ -1,0 +1,38 @@
+.staff-category {
+  margin-bottom: 2rem;
+}
+.staff-category-members {
+  --num-cols: 1;
+  --gap: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--num-cols),
+    minmax(calc(100% / var(--num-cols) - var(--gap)), 1fr)
+  );
+  // grid-template-columns: repeat(var(--num-cols), 1fr);
+
+  gap: var(--gap);
+  margin-top: 80px;
+}
+
+@media screen and (min-width: $tablet) {
+  .staff-category-members {
+    --num-cols: 2;
+    --gap: 20px;
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .staff-category-members {
+    --num-cols: 3;
+    --gap: 30px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .staff-category-members {
+    --num-cols: 4;
+    --gap: clamp(20px, 2.7vw, 60px);
+  }
+}

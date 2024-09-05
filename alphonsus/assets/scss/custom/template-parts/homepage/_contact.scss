@@ -1,0 +1,14 @@
+.contact-form-container {
+    margin-top: var(--homepage-section-spacing);
+    max-width: 65%;
+    margin-inline: auto;
+
+    z-index: 10;
+    position: relative;
+    .contact-form-heading {
+        margin-bottom: 70px;
+    }
+    .gform_footer {
+        text-align: right;
+    }
+}

@@ -1,0 +1,14 @@
+#crumbs,
+#crumbs a {
+  display: none;
+  color: white;
+  font-style: italic;
+  font-size: 18px;
+}
+
+@media screen and (min-width: $laptop) {
+  #crumbs,
+  #crumbs a {
+    display: inline;
+  }
+}

@@ -1,0 +1,31 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border-radius: 0;
+}
+
+form .gform_body {
+  input[type="text"],
+  textarea {
+    font-size: clamp(20px, 2vw, 23px) !important;
+    padding: 15px 25px !important;
+    font-family: "Lato";
+    line-height: 1;
+    border: 2px solid #718289 !important;
+    border-radius: 6px;
+    -webkit-appearance: none;
+
+    &:hover {
+      border-color: #111111 !important;
+    }
+
+    &:focus-visible {
+      border-color: #111111 !important;
+    }
+
+    @media screen and (min-width: $laptop) {
+      padding: 16px 30px !important;
+    }
+  }
+}

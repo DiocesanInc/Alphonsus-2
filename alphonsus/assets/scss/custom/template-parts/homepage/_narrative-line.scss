@@ -1,0 +1,15 @@
+#narrative-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: var(--hero-height);
+    left: 0px;
+    z-index: 5;
+    background-image: url(assets/img/Path4.svg);
+    background-image: url(assets/img/narrative-line3.png);
+
+    background-repeat: repeat-y;
+    background-position: center top;
+    pointer-events: none;
+    display: none;
+}

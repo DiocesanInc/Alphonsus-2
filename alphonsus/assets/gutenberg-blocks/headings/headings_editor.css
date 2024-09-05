@@ -1,0 +1,29 @@
+.editor-styles-wrapper .is-style-has-text-decoration-white,
+.editor-styles-wrapper .is-style-has-text-decoration-primary {
+  --deco-color: white;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.editor-styles-wrapper .is-style-has-text-decoration-white::after,
+.editor-styles-wrapper .is-style-has-text-decoration-primary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  height: 2px;
+  width: 130px;
+  background: var(--deco-color);
+}
+
+.editor-styles-wrapper
+  .is-style-has-text-decoration-white.has-text-align-center::after,
+.editor-styles-wrapper
+  .is-style-has-text-decoration-primary.has-text-align-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.editor-styles-wrapper .is-style-has-text-decoration-primary::after {
+  --deco-color: var(--clr-primary);
+}

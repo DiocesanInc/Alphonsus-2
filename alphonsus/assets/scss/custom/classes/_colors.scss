@@ -1,0 +1,75 @@
+.has-primary-color {
+    color: var(--clr-primary);
+}
+.has-secondary-color {
+    color: var(--clr-secondary);
+}
+.has-tertiary-color {
+    color: var(--clr-tertiary);
+}
+.has-quaternary-color {
+    color: var(--clr-quaternary);
+}
+.has-white-color {
+    color: white;
+}
+.has-black-color {
+    color: black;
+}
+
+.has-primary-background-color {
+    background: var(--clr-primary);
+}
+.has-secondary-background-color {
+    background: var(--clr-secondary);
+}
+.has-tertiary-background-color {
+    background: var(--clr-tertiary);
+}
+.has-quaternary-background-color {
+    background: var(--clr-quaternary);
+}
+.has-white-background-color {
+    background: white;
+}
+.has-black-background-color {
+    background: black;
+}
+
+.has-primary-color-hover:hover {
+    color: var(--clr-primary) !important;
+}
+.has-secondary-color-hover:hover {
+    color: var(--clr-secondary) !important;
+}
+.has-tertiary-color-hover:hover {
+    color: var(--clr-tertiary) !important;
+}
+.has-quaternary-color-hover:hover {
+    color: var(--clr-quaternary) !important;
+}
+.has-white-color-hover:hover {
+    color: white !important;
+}
+.has-black-color-hover:hover {
+    color: black !important;
+}
+
+.has-primary-background-color-after::after {
+    background: var(--clr-primary);
+}
+.has-secondary-background-color-after::after {
+    background: var(--clr-secondary);
+}
+.has-tertiary-background-color-after::after {
+    background: var(--clr-tertiary);
+}
+.has-quaternary-background-color-after::after {
+    background: var(--clr-quaternary);
+}
+.has-white-background-color-after::after {
+    background: white;
+}
+.has-black-background-color-after::after {
+    background: black;
+}

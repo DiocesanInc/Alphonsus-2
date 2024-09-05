@@ -1,0 +1,43 @@
+.homepage-section-cols {
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols, 1), var(--col-width, 100%));
+  gap: 40px;
+  @media screen and (min-width: $desktop) {
+    --num-cols: 2;
+    --col-width: calc(100% / var(--num-cols));
+  }
+
+  .calendar-container {
+    .calendar-weekday-slick .simcal-day {
+      margin-inline: 5px;
+    }
+  }
+
+  .calendar-container {
+    @media screen and (min-width: $desktop) {
+      .slick-arrow {
+        &.slick-prev {
+          left: 20px;
+        }
+        &.slick-next {
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  .news-container {
+    @media screen and (min-width: $desktop) {
+      .slick-arrow {
+        top: 15%;
+        &.slick-prev {
+          left: 85px;
+        }
+
+        &.slick-next {
+          right: 85px;
+        }
+      }
+    }
+  }
+}

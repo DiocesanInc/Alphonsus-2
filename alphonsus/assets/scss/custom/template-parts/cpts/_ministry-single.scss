@@ -1,0 +1,149 @@
+.single-ministry {
+  .single-container {
+    flex-wrap: wrap;
+
+    .back-button-container {
+      margin-top: 2rem;
+    }
+
+    .contact-persons-container {
+      --num-cols: 1;
+
+      display: grid;
+      grid-template-columns: repeat(var(--num-cols), 1fr);
+      gap: 2rem;
+
+      @media screen and (min-width: $tablet) {
+        --num-cols: 2;
+      }
+
+      @media screen and (min-width: $laptop) {
+        --num-cols: 3;
+      }
+
+      .contact-person-wrapper {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+
+        .staff-name {
+          margin-block: 0 10px;
+          font-family: var(--font-heading);
+          font-weight: bold;
+          font-size: 24px;
+        }
+
+        .staff-position {
+          color: var(--clr-quaternary);
+          font-size: 18px;
+          font-weight: bold;
+          font-family: var(--font-main);
+          margin-bottom: 50px;
+        }
+
+        .teaser-content {
+          border-top: 1px solid var(--clr-quaternary);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 16px;
+          padding-top: 10px;
+          gap: 20px;
+          height: auto;
+
+          a {
+            color: var(--clr-quaternary);
+
+            i {
+              transition: var(--tr-background), var(--tr-color);
+              border-radius: 50%;
+              border: 1px solid var(--clr-quaternary);
+              height: 40px;
+              width: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+            }
+
+            &:hover {
+              text-decoration: none;
+
+              i {
+                color: white;
+                background: var(--clr-quaternary);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .single-thumbnail {
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .contact-persons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      border-bottom: 1px solid;
+      width: 100%;
+      margin-bottom: 2rem;
+      .contact-person {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: 0 0 0.5rem;
+        a {
+          transition: color 0.25s ease-in;
+        }
+
+        .contact-name,
+        .contact-email {
+          margin: 0 0.5rem 0 0 !important;
+        }
+
+        .contact-name {
+          font-weight: 700;
+          border-right: 1px solid;
+          padding-right: 0.5rem;
+          margin-right: 0.5rem;
+          &.no-contact-info {
+            border-color: transparent !important;
+          }
+        }
+
+        .contact-phone {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .single-ministry {
+    .single-container {
+      .single-ministry-article {
+        width: 75%;
+        padding-right: 5%;
+
+        .the-content {
+          width: 100%;
+        }
+      }
+      .contact-persons-container {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+    }
+  }
+}

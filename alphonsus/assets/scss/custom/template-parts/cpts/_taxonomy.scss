@@ -1,0 +1,36 @@
+.archive.tax-ministry-group {
+    .taxonomy-description {
+        text-align: center;
+    }
+
+    .taxonomy-container {
+        margin: 3.75rem auto 0;
+        .taxonomy-single {
+            .ministry-name {
+                margin: 0 0 0.5em !important;
+                .ministry-name-link {
+                    text-decoration: none;
+                    transition: color 0.25s ease-in;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .ministry-text {
+                margin: 0;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1399px) {
+        .taxonomy-container {
+            .taxonomy-single {
+                .read-more-link {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}

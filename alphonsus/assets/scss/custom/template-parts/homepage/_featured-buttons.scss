@@ -1,0 +1,169 @@
+.featured-buttons-container {
+  --cols: 1;
+
+  transform: translateY(calc(-12.5% * var(--cols)));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  justify-content: center;
+  position: relative;
+  z-index: 11;
+
+  @media screen and (min-width: $tablet) {
+    --cols: 2;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --cols: 4;
+  }
+
+  &[data-gap="true"] {
+    gap: 30px;
+    .featured-button,
+    .featured-button-inner::before {
+      border-radius: 20px;
+    }
+  }
+
+  &[data-gap="false"] {
+    .featured-button:first-child,
+    .featured-button:first-child .featured-button-inner::before {
+      border-radius: 20px 20px 0 0;
+
+      @media screen and (min-width: $tablet) {
+        border-radius: 20px 0 0 0;
+      }
+
+      @media screen and (min-width: $desktop) {
+        border-radius: 20px 0 0 20px;
+      }
+    }
+
+    .featured-button:nth-child(2),
+    .featured-button:nth-child(2) .featured-button-inner::before {
+      border-radius: 0;
+
+      @media screen and (min-width: $tablet) {
+        border-radius: 0 20px 0 0;
+      }
+
+      @media screen and (min-width: $desktop) {
+        border-radius: 0;
+      }
+    }
+
+    .featured-button:nth-child(3),
+    .featured-button:nth-child(3) .featured-button-inner::before {
+      border-radius: 0;
+
+      @media screen and (min-width: $tablet) {
+        border-radius: 0 0 0 20px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        border-radius: 0;
+      }
+    }
+
+    .featured-button:last-child,
+    .featured-button:last-child .featured-button-inner::before {
+      border-radius: 0 0 20px 20px;
+
+      @media screen and (min-width: $tablet) {
+        border-radius: 0 0 20px 0;
+      }
+
+      @media screen and (min-width: $desktop) {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+  }
+
+  &[data-inner-border="true"] {
+    .featured-button {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 1px solid white;
+        border-radius: 10px;
+        z-index: 1;
+      }
+
+      &.white::before {
+        border-color: var(--clr-tertiary);
+      }
+    }
+  }
+
+  .featured-button {
+    --color: white;
+
+    background-image: var(--hover-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    // width: 25%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+
+    &.white {
+      --color: var(--clr-tertiary);
+    }
+
+    .featured-button-inner {
+      display: flex;
+      padding: 75px 20px;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      color: var(--color);
+      position: relative;
+      height: 100%;
+      justify-content: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--background_color);
+        transition: var(--tr-opacity);
+      }
+
+      * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .featured-button-title {
+        font-family: var(--font-heading);
+        font-size: clamp(32px, 4vw, 38px);
+        text-align: center;
+        padding-inline: 5px;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .featured-button-inner::before {
+        opacity: 0.5;
+      }
+    }
+
+    i {
+      color: var(--background_color);
+      background: var(--color);
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.alm-listing {
+  padding: 0;
+  margin: 0;
+
+  .alm-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      border-radius: 10px 10px 0 0;
+      aspect-ratio: 11 / 6;
+      object-fit: cover;
+    }
+  }
+
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 50px;
+  }
+}
+
+.alm-btn-wrap {
+  margin-top: 50px;
+}

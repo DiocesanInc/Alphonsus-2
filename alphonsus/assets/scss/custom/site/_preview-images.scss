@@ -1,0 +1,22 @@
+.preview-image {
+    transition: opacity 0.7s ease;
+    animation: fadeIn;
+    filter: blur(10px);
+    height: 100%;
+    width: 100%;
+}
+.hero-slide.loaded {
+    .preview-image {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

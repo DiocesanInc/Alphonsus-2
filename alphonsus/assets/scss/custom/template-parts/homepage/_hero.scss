@@ -1,0 +1,95 @@
+.hero {
+  --hero-info-position-bottom: 25%;
+  --hero-info-width: 100%;
+  --hero-info-background-color: transparent;
+  --hero-info-padding: 2rem 2rem 1rem;
+  --hero-info-font-color: white;
+
+  --hero-title-max-width: none;
+
+  // --hero-height: calc(100vh - var(--content-inset));
+
+  height: var(--hero-height);
+  position: relative;
+  z-index: 10;
+
+  &.has-video {
+    --hero-height: auto;
+  }
+
+  &[data-show-welcome="false"] .slick-dots {
+    bottom: 110px;
+  }
+
+  .hero-slider {
+    height: 100%;
+
+    .hero-slide {
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      &.parallax {
+        @media screen and (min-width: $laptop) {
+          background-attachment: fixed;
+        }
+      }
+    }
+  }
+
+  .hero-info {
+    position: absolute;
+    bottom: var(--hero-info-position-bottom);
+    width: var(--hero-info-width);
+    background: var(--hero-info-background-color);
+    color: var(--hero-info-font-color);
+    padding: var(--hero-info-padding);
+
+    .hero-title {
+      text-align: center;
+      max-width: var(--hero-title-max-width);
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .hero-video {
+    height: 100%;
+    margin-left: calc(50vw - var(--content-inset));
+    transform: translateX(-50%);
+    max-width: calc(100vw - (var(--content-inset) * 2));
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, black, transparent);
+    transition: opacity 0.3s ease;
+  }
+
+  @media screen and (min-width: $tablet) {
+    --hero-title-max-width: 70%;
+
+    .hero-title {
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    --hero-title-max-width: 50%;
+  }
+  @media screen and (min-width: $desktop) {
+    .hero-video {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      transform: none;
+    }
+  }
+}

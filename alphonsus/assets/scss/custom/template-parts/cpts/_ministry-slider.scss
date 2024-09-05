@@ -1,0 +1,83 @@
+.ministry-slider {
+  .ministry-group {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &.slick-initialized {
+      opacity: 1;
+    }
+
+    .slick-arrow {
+      border-color: white;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.slick-disabled {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .slick-next {
+      right: -5%;
+    }
+
+    .slick-prev {
+      left: -5%;
+      z-index: 1;
+    }
+
+    .slick-list {
+      overflow: visible;
+
+      .slick-track {
+        margin-inline: 0 auto;
+      }
+
+      .ministry-wrapper {
+        margin: 0 0.5rem 3rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            white 20%
+          );
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        &:not(.slick-active)::after {
+          opacity: 0.6;
+        }
+
+        .ministry-image-wrapper {
+          overflow: hidden;
+
+          .teaser-img {
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .teaser-content-wrapper {
+          padding: 0;
+          flex: 1;
+
+          .teaser-title {
+            font-size: 20px;
+            font-family: var(--font-main);
+          }
+        }
+      }
+    }
+  }
+}
