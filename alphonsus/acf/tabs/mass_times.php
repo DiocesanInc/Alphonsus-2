@@ -136,7 +136,7 @@ function acf_mass_times()
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '25',
+                'width' => '21',
                 'class' => '',
                 'id' => '',
             ),
@@ -144,6 +144,7 @@ function acf_mass_times()
                 'dove' => 'Dove',
                 'lamb' => 'Lamb',
                 'hand' => 'Hand',
+                'select' => 'Select ->',
             ),
             'default_value' => "dove",
             'return_format' => 'value',
@@ -152,6 +153,33 @@ function acf_mass_times()
             'ui' => 0,
             'ajax' => 0,
             'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_6182f5a5311cz',
+            'label' => 'Watermark Upload',
+            'name' => 'watermark_upload',
+            'type' => 'file',
+            'instructions' => 'Recommended size 750x750.',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_65dcfeed09c98',
+                        'operator' => '==',
+                        'value' => 'select',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '21',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'url',
+            'library' => 'all',
+            'min_size' => '',
+            'max_size' => '',
+            'mime_types' => '',
         ),
         array(
             'key' => 'field_65b94794b4ef8',
@@ -171,7 +199,7 @@ function acf_mass_times()
                 ),
             ),
             'wrapper' => array(
-                'width' => '50',
+                'width' => '33',
                 'class' => '',
                 'id' => '',
             ),
@@ -197,7 +225,7 @@ function acf_mass_times()
                 ),
             ),
             'wrapper' => array(
-                'width' => '50',
+                'width' => '33',
                 'class' => '',
                 'id' => '',
             ),
