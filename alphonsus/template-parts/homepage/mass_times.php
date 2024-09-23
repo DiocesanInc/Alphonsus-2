@@ -9,7 +9,7 @@
  */
 
 $bg_img = get_field("mass_times_bg_img");
-$bg_img_path = get_template_directory_uri() . "/assets/img/$bg_img.svg";
+$bg_img_path = $bg_img == 'select' ? get_field('watermark_upload') : get_template_directory_uri() . "/assets/img/$bg_img.svg";
 
 $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
 
@@ -52,7 +52,9 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
             echo acfLink(get_field("mass_times_link"), "the-button"); ?>
         </div>
     </div>
-    <?php if ($bg_img) : ?>
+    <?php if ($bg_img == 'select') : ?>
+        <div class="bg-img select" <?php echo $bg; ?>></div>
+    <?php elseif ($bg_img) : ?>
         <div class="bg-img" <?php echo $bg; ?>></div>
     <?php endif; ?>
 </div>
