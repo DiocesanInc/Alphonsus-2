@@ -25,6 +25,9 @@
     @media screen and (min-width: $laptop) {
       background-position: bottom right;
     }
+    &.select {
+      background-position: center center;
+    }
   }
 
   @media screen and (min-width: $laptop) {
