@@ -3,13 +3,12 @@
                 BREADCRUMBS
 =============================================*/
 //  to include in functions.php
-function the_breadcrumb()
+function the_breadcrumb($showCurrent = 1)
 {
     if (!get_field("show_breadcrumbs", "options")) return null;
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $delimiter = '&nbsp;/&nbsp;'; // delimiter between crumbs
     $home = 'Home'; // text for the 'Home' link
-    $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $before = '<span class="current">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
 
@@ -55,7 +54,21 @@ function the_breadcrumb()
                 }
                 echo $cats;
                 if ($showCurrent == 1) {
-                    echo $before . "News Article" . $after;
+                    $category = get_the_category();
+
+                    if ($category) {
+                        $current = match (get_field("single_article_title", $category[0])) {
+                            "Post Title" => get_the_title(),
+                            default => getField("single_article_title", $category[0], true, "News Article"),
+                        };
+                    } else {
+                        $current = get_the_title();
+                    }
+
+                    //ellipsis $current after 10 characters
+                    $current = substr($current, 0, 10) . '...'; 
+
+                    echo "$before $current $after";
                 }
             }
         } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {

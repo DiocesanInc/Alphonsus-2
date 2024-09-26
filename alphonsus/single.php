@@ -27,13 +27,22 @@ endif;
 
                 $headerImg = getField("default_post_featured_image", "options", true, get_field("default_featured_image", "options"));
 
-                get_template_part('template-parts/headers/page-header', null, array("headerImg" => $headerImg, "headline" => "News Article"));
+                if ($category) {
+                    $headline = match (get_field("single_article_title", $category[0])) {
+                        "Post Title" => get_the_title(),
+                        default => getField("single_article_title", $category[0], true, "News Article"),
+                    };
+                } else {
+                    $headline = get_the_title();
+                }
+
+                get_template_part('template-parts/headers/page-header', null, array("headerImg" => $headerImg, "headline" => $headline));
 
             endif;
 
-            elseif(get_post_type() === "staff") : 
+        elseif (get_post_type() === "staff") :
 
-                get_template_part('template-parts/headers/page-header', null, array("headerImg" => get_field("default_featured_image", "options"), "headline" => "Staff Member"));
+            get_template_part('template-parts/headers/page-header', null, array("headerImg" => get_field("default_featured_image", "options"), "headline" => "Staff Member"));
 
         else :
 
@@ -48,7 +57,7 @@ endif;
                 elseif (get_post_type() === "ministry") :
                     get_template_part('template-parts/cpts/ministries/singles/single', "ministry");
                 elseif (get_post_type() === "post") :
-                    get_template_part('template-parts/content', "post");
+                    get_template_part('template-parts/content', "post", array("hasPageHeader" => $hasPageHeader));
                 else :
                     get_template_part("template-parts/content");
                 endif;

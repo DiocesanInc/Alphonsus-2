@@ -81,7 +81,7 @@ if (acfIsInstalled()) {
 
     function load_acf_file($filename)
     {
-        if(is_child_theme() === true && file_exists(get_stylesheet_directory() . "/acf/$filename.php")){
+        if (is_child_theme() === true && file_exists(get_stylesheet_directory() . "/acf/$filename.php")) {
             include_once get_stylesheet_directory() . "/acf/$filename.php";
         } else {
             include_once get_template_directory() . "/acf/$filename.php";
@@ -92,5 +92,6 @@ if (acfIsInstalled()) {
         load_acf_file("homepage");
         load_acf_file("template-settings");
         load_acf_file("ministry-groups");
+        load_acf_file("post_category");
     }
 }
