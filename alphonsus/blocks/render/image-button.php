@@ -132,6 +132,7 @@ $opacity = 0.7;
     position: absolute;
     font-family: var(--font-heading);
     font-size: inherit;
+    text-align: center;
 }
 
 
