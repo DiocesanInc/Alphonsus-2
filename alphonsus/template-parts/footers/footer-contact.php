@@ -8,6 +8,8 @@
  * @package alphonsus
  */
 
+$icon_clr = getField("footer_icon_color", "options", true, 'white');
+
 ?>
 
 <div class="footer-contact">
@@ -15,26 +17,26 @@
 
     <div class="footer-contact-inner">
         <?php if (get_field("address", "options")) : ?>
-            <div class="address">
-                <i class="fa-solid fa-location-dot"></i>
-                <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>">
-                    <?php echo get_field("address", "options")["title"]; ?>
-                </a>
-            </div>
+        <div class="address">
+            <i class="fa-solid fa-location-dot" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
+            <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>">
+                <?php echo get_field("address", "options")["title"]; ?>
+            </a>
+        </div>
         <?php endif; ?>
 
         <?php if (get_field("email", "options")) : ?>
-            <div class="email">
-                <i class="fa-solid fa-envelope"></i>
-                <?php echo emailLink(get_field("email", "options"), get_field("email", "options")); ?>
-            </div>
+        <div class="email">
+            <i class="fa-solid fa-envelope" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
+            <?php echo emailLink(get_field("email", "options"), get_field("email", "options")); ?>
+        </div>
         <?php endif; ?>
 
         <?php if (get_field("phone", "options")) : ?>
-            <div class="phone">
-                <i class="fa-solid fa-phone"></i>
-                <?php echo phoneLink(get_field("phone", "options"), true); ?>
-            </div>
+        <div class="phone">
+            <i class="fa-solid fa-phone" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
+            <?php echo phoneLink(get_field("phone", "options"), true); ?>
+        </div>
         <?php endif; ?>
     </div>
 

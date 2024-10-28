@@ -8,9 +8,11 @@
  * @package alphonsus
  */
 
+$marker_clr = getField("footer_icon_color", "options", true, 'white');
+
 ?>
 
-<div class="quicklinks-container">
+<div class="quicklinks-container" style="--marker-clr: <?php echo $marker_clr; ?>">
     <h2 class="has-text-decoration"><?php the_field("footer_quicklinks_header", "options"); ?></h2>
     <?php
     wp_nav_menu(

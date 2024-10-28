@@ -1,0 +1,1 @@
+.footer-contact-inner{display:flex;flex-direction:column;gap:30px}.footer-contact-inner i{color:var(--icon-clr, white)}.footer-contact-inner .address,.footer-contact-inner .phone,.footer-contact-inner .fax,.footer-contact-inner .email{display:flex;flex-direction:row;align-items:center;gap:15px}

@@ -21,7 +21,8 @@ footer .site-info {
       gap: 15px;
 
       a {
-        border: 1px solid white;
+        color: var(--icon-clr, white);
+        border: 1px solid var(--icon-clr, white);
         border-radius: 100%;
         display: block;
         width: 42px;

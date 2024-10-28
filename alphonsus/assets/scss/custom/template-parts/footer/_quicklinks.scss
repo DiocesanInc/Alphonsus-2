@@ -13,7 +13,7 @@
     }
 
     li::marker {
-      color: var(--clr-secondary);
+      color: var(--marker-clr, white);
     }
   }
 }
