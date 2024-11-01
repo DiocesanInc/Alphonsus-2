@@ -72,9 +72,26 @@ function custom_excerpt_length($excerpt)
 
 add_filter('the_excerpt', 'custom_excerpt_length');
 
+// require get_template_directory() . "/update-checker/plugin-update-checker.php";
+// $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+//     'https://hybrid-updates.diocesanweb.org/hybrids/alphonsus/theme.json', //Metadata URL.
+//     __FILE__, //Full path to the main plugin file.
+//     'alphonsus' //Plugin slug. Usually it's the same as the name of the directory.
+// );
+
+
 require get_template_directory() . "/update-checker/plugin-update-checker.php";
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://hybrid-updates.diocesanweb.org/hybrids/alphonsus/theme.json', //Metadata URL.
-    __FILE__, //Full path to the main plugin file.
-    'alphonsus' //Plugin slug. Usually it's the same as the name of the directory.
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/DiocesanInc/Alphonsus-2',
+    __FILE__,
+    'alphonsus'
 );
+
+//Set the branch that contains the stable release.
+// $myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+// $myUpdateChecker->setAuthentication('your-token-here');
