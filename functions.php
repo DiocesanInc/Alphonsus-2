@@ -85,7 +85,7 @@ require get_template_directory() . "/update-checker/plugin-update-checker.php";
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/DiocesanInc/Alphonsus-2',
+    'https://github.com/DiocesanInc/AlphoUpdateTest',
     __FILE__,
     'alphonsus'
 );
