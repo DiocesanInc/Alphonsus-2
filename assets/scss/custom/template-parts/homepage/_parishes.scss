@@ -1,0 +1,243 @@
+// main: ../../../../../style.scss
+.parish-cluster {
+  margin: 0px auto 6rem;
+  padding: 45px 0;
+  position: relative;
+  background: white;
+  text-align: center;
+  &.parishFlex {
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    .parish-scroll-title {
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      margin-bottom: 2rem;
+    }
+    .parishScroll {
+      width: 80%;
+      margin: 0 auto;
+      .slick-arrow {
+        transform: rotate(90deg);
+        left: 0%;
+        &.slick-prev {
+          top: -20%;
+          &::before {
+            content: "\f053";
+          }
+        }
+        &.slick-next {
+          bottom: -20%;
+          top: unset;
+          &::before {
+            content: "\f054";
+          }
+        }
+      }
+      .testimonials-carousel {
+          .testimonial {
+            opacity: .25;
+            a {
+              text-decoration: none;
+            }
+            .testimonial-title {
+              margin: 1px;
+              color: var(--clr-secondary);
+            }
+            .testimonial-content {
+              font-size: 18px;
+            }
+            &.slick-active {
+              opacity: 1;
+            }
+          }
+      }
+    }
+  }
+  /* Map Slider */
+  .parish-map-title {
+    margin-left: 8%;
+  }
+  .parish-maps {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    #map {
+      height: 400px;
+    }
+
+    .slick-list {
+      padding: 0 !important;
+    }
+    .parish-maps-wrapper {
+      margin-top: 25px;
+      .parish-map {
+        div[id^='map'] {
+          min-height: 480px;
+        }
+      }
+    }
+    .parish-map-slider {
+      margin-bottom: 75px;
+      .parish-text-wrapper {
+        color: var(--clr-secondary);
+        .parish-title {
+          margin: 20px 0;
+        }
+        a {
+          color: var(--clr-secondary);
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+        div + div {
+          margin-top: 10px;
+        }
+      }
+    }
+    .slick-arrow {
+      left: 0px;
+      background-color: var(--clr-primary);
+      border-color: var(--clr-primary);
+      bottom: -50%;
+      top: unset;
+      &.slick-prev {
+        transform: translate(0%, -50%)
+      }
+      &.slick-next {
+        transform: translate(150%, -50%);
+      }
+      &:hover, &:focus {
+        background-color: transparent;
+        &:before {
+          color: var(--clr-primary);
+        }
+      }
+    }
+  }
+
+  .parishButtons {
+    height: 310px;
+    text-align: left;
+    padding: 0 0rem;
+    a {
+      text-decoration: none;
+    }
+    .featured-button {
+      box-shadow: 0 3px 6px #00000029;
+      height: 300px;
+      display: block;
+      font-size: var(--fs-500);
+      font-family: var(--font-main);
+      margin-right: 20px;
+      margin-left: 20px;
+      width: 250px;
+      border-radius: 17px;
+      position: relative;
+      background-size: cover;
+      overflow: hidden;
+      text-decoration: none;
+      &[href="#"] {
+        pointer-events: none;
+      }
+      img {
+        height: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 17px 17px 0 0;
+        width: 100%;
+      }
+      h2 {
+        text-transform: uppercase;
+      }
+      .button-title, p {
+        margin: 0 10%;
+        position: relative;
+        left: unset;
+        transform: unset;
+      }
+      &::after {
+        content: none;
+      }
+    }
+    .slick-prev, .slick-next {
+      top: 110%;
+      background: white;
+      border-color: var(--clr-quaternary);
+      &:before {
+        color: var(--clr-quaternary);
+      }
+      &:hover {
+        background: var(--clr-quaternary);
+        &:before {
+          color: #fff;
+        }
+      }
+    }
+    .slick-prev {
+      right: 0;
+      left: 50%;
+      transform: translateX(-105%);
+    }
+    .slick-next {
+      right: 0;
+      left: 50%;
+      transform: translateX(5%);
+    }
+  }
+
+  @media screen and (min-width: $tablet){
+    &.parishFlex .parishScroll {
+      width: 60%;
+    }
+  }
+  @media screen and (min-width: $laptop){
+    &.parishFlex {
+      flex-direction: row;
+    }
+    &.parishFlex h1.parish-scroll-title {
+      width: 50%;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: .67em;
+    }
+    &.parishFlex .parishScroll {
+      margin: 0 0 0 20px;
+      width: 50%;
+    }
+    
+    /* Map Slider */
+    .parish-maps {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowwrap;
+      justify-content: center;
+      .parish-maps-wrapper {
+        width: 50%;
+        margin-top: 0;
+      }
+      .parish-map-slider {
+        width: 50%;
+        margin-left: 3.125rem;
+        margin-bottom: 0;
+        .parish-text-wrapper {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowwrap;
+          justify-content: flex-start;
+        }
+      }
+      .slick-arrow {
+        bottom: 4rem;
+      }
+    }
+  }
+}

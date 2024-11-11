@@ -23,6 +23,14 @@ function alphonsusScripts()
         $jqui_v
     );
 
+    /* Carousel */
+    wp_enqueue_script(
+        'materialize-js',
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
+        array('jquery'),
+        '1.0.0',
+        true
+    );
 
     foreach (glob(get_template_directory() . "/assets/js/*.js") as $file) {
         $filename = substr($file, strrpos($file, '/') + 1);
