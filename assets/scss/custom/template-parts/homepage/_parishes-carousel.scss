@@ -14,6 +14,16 @@
         @media screen and (min-width: $tablet){
             perspective: 50.375rem;
         }
+        &[data-btns="1"],&[data-btns="2"],&[data-btns="3"]{
+            .button {
+                width: 28.5rem;
+                .button-image {
+                    object-fit: cover;
+                    max-height: 11rem;
+                    margin: 0;
+                }
+            }
+        }
     }
     .button {
         height: 200px;

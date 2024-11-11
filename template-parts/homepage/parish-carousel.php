@@ -9,7 +9,7 @@
  */
 ?>
 
-<div class="buttons-container carousel">
+<div class="buttons-container carousel" data-btns="<?php echo count(get_field('parish_carousel')); ?>">
     <?php while (have_rows('parish_carousel')) : the_row(); ?>
     <div class="button carousel-item">
         <?php if (get_sub_field('is_image') && get_sub_field('image')) : ?>

@@ -3639,6 +3639,15 @@ main .entry-header #crumbs a {
     perspective: 50.375rem;
   }
 }
+.buttons-container.carousel[data-btns="1"] .button, .buttons-container.carousel[data-btns="2"] .button, .buttons-container.carousel[data-btns="3"] .button {
+  width: 28.5rem;
+}
+.buttons-container.carousel[data-btns="1"] .button .button-image, .buttons-container.carousel[data-btns="2"] .button .button-image, .buttons-container.carousel[data-btns="3"] .button .button-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 11rem;
+  margin: 0;
+}
 .buttons-container .button {
   height: 200px;
   position: absolute;
