@@ -3387,6 +3387,396 @@ main .entry-header #crumbs a {
   }
 }
 
+.parish-cluster {
+  margin: 0px auto 6rem;
+  padding: 45px 0;
+  position: relative;
+  background: white;
+  text-align: center;
+  /* Map Slider */
+}
+.parish-cluster.parishFlex {
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.parish-cluster.parishFlex .parish-scroll-title {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.parish-cluster.parishFlex .parishScroll {
+  width: 80%;
+  margin: 0 auto;
+}
+.parish-cluster.parishFlex .parishScroll .slick-arrow {
+  transform: rotate(90deg);
+  left: 0%;
+}
+.parish-cluster.parishFlex .parishScroll .slick-arrow.slick-prev {
+  top: -20%;
+}
+.parish-cluster.parishFlex .parishScroll .slick-arrow.slick-prev::before {
+  content: "\f053";
+}
+.parish-cluster.parishFlex .parishScroll .slick-arrow.slick-next {
+  bottom: -20%;
+  top: unset;
+}
+.parish-cluster.parishFlex .parishScroll .slick-arrow.slick-next::before {
+  content: "\f054";
+}
+.parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial {
+  opacity: 0.25;
+}
+.parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial a {
+  text-decoration: none;
+}
+.parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial .testimonial-title {
+  margin: 1px;
+  color: var(--clr-secondary);
+}
+.parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial .testimonial-content {
+  font-size: 18px;
+}
+.parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial.slick-active {
+  opacity: 1;
+}
+.parish-cluster .parish-map-title {
+  margin-left: 8%;
+}
+.parish-cluster .parish-maps {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.parish-cluster .parish-maps #map {
+  height: 400px;
+}
+.parish-cluster .parish-maps .slick-list {
+  padding: 0 !important;
+}
+.parish-cluster .parish-maps .parish-maps-wrapper {
+  margin-top: 25px;
+}
+.parish-cluster .parish-maps .parish-maps-wrapper .parish-map div[id^=map] {
+  min-height: 480px;
+}
+.parish-cluster .parish-maps .parish-map-slider {
+  margin-bottom: 75px;
+}
+.parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper {
+  color: var(--clr-secondary);
+}
+.parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper .parish-title {
+  margin: 20px 0;
+}
+.parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper a {
+  color: var(--clr-secondary);
+}
+.parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper a:hover, .parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper a:focus {
+  text-decoration: underline;
+}
+.parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper div + div {
+  margin-top: 10px;
+}
+.parish-cluster .parish-maps .slick-arrow {
+  left: 0px;
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  bottom: -50%;
+  top: unset;
+}
+.parish-cluster .parish-maps .slick-arrow.slick-prev {
+  transform: translate(0%, -50%);
+}
+.parish-cluster .parish-maps .slick-arrow.slick-next {
+  transform: translate(150%, -50%);
+}
+.parish-cluster .parish-maps .slick-arrow:hover, .parish-cluster .parish-maps .slick-arrow:focus {
+  background-color: transparent;
+}
+.parish-cluster .parish-maps .slick-arrow:hover:before, .parish-cluster .parish-maps .slick-arrow:focus:before {
+  color: var(--clr-primary);
+}
+.parish-cluster .parishButtons {
+  height: 310px;
+  text-align: left;
+  padding: 0 0rem;
+}
+.parish-cluster .parishButtons a {
+  text-decoration: none;
+}
+.parish-cluster .parishButtons .featured-button {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  height: 300px;
+  display: block;
+  font-size: var(--fs-500);
+  font-family: var(--font-main);
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 250px;
+  border-radius: 17px;
+  position: relative;
+  background-size: cover;
+  overflow: hidden;
+  text-decoration: none;
+}
+.parish-cluster .parishButtons .featured-button[href="#"] {
+  pointer-events: none;
+}
+.parish-cluster .parishButtons .featured-button img {
+  height: 50%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 17px 17px 0 0;
+  width: 100%;
+}
+.parish-cluster .parishButtons .featured-button h2 {
+  text-transform: uppercase;
+}
+.parish-cluster .parishButtons .featured-button .button-title, .parish-cluster .parishButtons .featured-button p {
+  margin: 0 10%;
+  position: relative;
+  left: unset;
+  transform: unset;
+}
+.parish-cluster .parishButtons .featured-button::after {
+  content: none;
+}
+.parish-cluster .parishButtons .slick-prev, .parish-cluster .parishButtons .slick-next {
+  top: 110%;
+  background: white;
+  border-color: var(--clr-quaternary);
+}
+.parish-cluster .parishButtons .slick-prev:before, .parish-cluster .parishButtons .slick-next:before {
+  color: var(--clr-quaternary);
+}
+.parish-cluster .parishButtons .slick-prev:hover, .parish-cluster .parishButtons .slick-next:hover {
+  background: var(--clr-quaternary);
+}
+.parish-cluster .parishButtons .slick-prev:hover:before, .parish-cluster .parishButtons .slick-next:hover:before {
+  color: #fff;
+}
+.parish-cluster .parishButtons .slick-prev {
+  right: 0;
+  left: 50%;
+  transform: translateX(-105%);
+}
+.parish-cluster .parishButtons .slick-next {
+  right: 0;
+  left: 50%;
+  transform: translateX(5%);
+}
+@media screen and (min-width: 768px) {
+  .parish-cluster.parishFlex .parishScroll {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .parish-cluster {
+    /* Map Slider */
+  }
+  .parish-cluster.parishFlex {
+    flex-direction: row;
+  }
+  .parish-cluster.parishFlex h1.parish-scroll-title {
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0.67em;
+  }
+  .parish-cluster.parishFlex .parishScroll {
+    margin: 0 0 0 20px;
+    width: 50%;
+  }
+  .parish-cluster .parish-maps {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowwrap;
+    justify-content: center;
+  }
+  .parish-cluster .parish-maps .parish-maps-wrapper {
+    width: 50%;
+    margin-top: 0;
+  }
+  .parish-cluster .parish-maps .parish-map-slider {
+    width: 50%;
+    margin-left: 3.125rem;
+    margin-bottom: 0;
+  }
+  .parish-cluster .parish-maps .parish-map-slider .parish-text-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowwrap;
+    justify-content: flex-start;
+  }
+  .parish-cluster .parish-maps .slick-arrow {
+    bottom: 4rem;
+  }
+}
+
+.buttons-container.carousel {
+  height: 35.5rem;
+  perspective: 44.375rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+}
+@media screen and (min-width: 768px) {
+  .buttons-container.carousel {
+    perspective: 50.375rem;
+  }
+}
+.buttons-container .button {
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--clr-quaternary);
+  outline: 1px solid var(--clr-quaternary);
+  outline-offset: 3px;
+  width: 20.5rem;
+  max-width: 85vw;
+  min-height: 32rem;
+  padding: 30px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+}
+.buttons-container .button i {
+  align-self: center;
+  color: var(--clr-secondary);
+  font-size: 10rem;
+}
+.buttons-container .button .button-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 10rem;
+  margin: 0 auto;
+}
+.buttons-container .button .button-title {
+  margin: 0.75em auto 1.25em 0;
+}
+.buttons-container .button .button-text {
+  font-size: 18px;
+  color: #404040;
+  margin-bottom: 40px;
+}
+.buttons-container .button .the-button {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.buttons-container.alt-featured {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+  margin-block: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .buttons-container.alt-featured {
+    grid-template-columns: 40% 60%;
+    max-width: 70%;
+  }
+}
+.buttons-container.alt-featured .subtitle {
+  font-weight: 400;
+}
+.buttons-container.alt-featured .buttons {
+  display: flex;
+  flex-direction: column;
+}
+.buttons-container.alt-featured .buttons .button {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  min-height: auto;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+.buttons-container.alt-featured .buttons .button:hover {
+  text-decoration: none;
+  background: var(--clr-primary);
+  color: inherit;
+}
+.buttons-container.alt-featured .buttons .button:not(:last-child) {
+  border-bottom: 1px solid var(--clr-primary);
+}
+.buttons-container.alt-featured .buttons .button:has(> :first-child:last-child) {
+  grid-template-columns: 100%;
+}
+.buttons-container.alt-featured .buttons .button .button-title {
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+.buttons-container.alt-featured .buttons .button .content-wrapper {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.buttons-container.alt-featured .buttons .button i {
+  font-size: 5rem;
+}
+
+.carousel-arrows {
+  --buttons-arrow-size: 2.75rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.75rem;
+}
+.carousel-arrows i {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-tertiary-st);
+  transition: var(--tr-background), var(--tr-color);
+  bottom: 0;
+  background: white;
+  border-color: var(--clr-quaternary);
+  position: relative;
+  cursor: pointer;
+  margin-right: 1rem;
+  opacity: 0.75;
+  transition: background 0.25s ease-in, color 0.25s ease-in, opacity 0.25s ease-in;
+}
+.carousel-arrows i:before {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-quaternary);
+}
+.carousel-arrows i:last-child {
+  margin-right: 0;
+}
+.carousel-arrows i:hover, .carousel-arrows i:focus {
+  background: var(--clr-quaternary);
+  color: #fff;
+  opacity: 1;
+}
+.carousel-arrows i:hover:before, .carousel-arrows i:focus:before {
+  color: #fff;
+}
+
 .ministry-funnel {
   display: flex;
   flex-direction: column;
