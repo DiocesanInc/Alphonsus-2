@@ -10,9 +10,9 @@
  ?>
  <div class="parish-cluster">
     <?php if(get_field('parish_scroll_title'));?> 
-    <h1 class="parish-scroll-title">
+    <h2 class="parish-scroll-title has-text-decoration text-decoration-is-centered has-primary-background-color-after">
         <?php echo get_field('parish_scroll_title');?>
-    </h1>
+    </h2>
     <?php if (have_rows('parish_buttons')&&(get_field('cluster_style') == 'buttons')) : ?>
     <div class="featured-buttons parishBtns" data-btns="<?php echo count(get_field('parish_buttons')); ?>">
         <div class="featured-buttons-wrapper parishButtons">

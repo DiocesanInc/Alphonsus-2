@@ -3395,6 +3395,10 @@ main .entry-header #crumbs a {
   text-align: center;
   /* Map Slider */
 }
+.parish-cluster .parish-scroll-title {
+  font-size: clamp(36px, 4.5vw, 48px);
+  margin-top: 0;
+}
 .parish-cluster.parishFlex {
   margin: 20px auto 0;
   display: flex;
