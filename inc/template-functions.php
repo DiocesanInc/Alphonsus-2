@@ -137,7 +137,11 @@ function getMinistryPostObject()
 if (!function_exists("my_form_submit_button")) {
     function my_form_submit_button($button, $form)
     {
-        return "<button type='submit' class='the-button' id='gform_submit_button_{$form['id']}'>Submit</button>";
+        $fragment = WP_HTML_Processor::create_fragment($button);
+        $fragment->next_token();
+        $fragment->add_class('the-button');
+
+        return $fragment->get_updated_html();
     }
     add_filter('gform_submit_button', 'my_form_submit_button', 10, 2);
 }
