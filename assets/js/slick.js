@@ -139,4 +139,36 @@ jQuery(document).ready(function ($) {
       },
     ],
   });
+  
+  $(".page-template-homepage .parishButtons").slick({
+    autoplay: false,
+    dots: false,
+    arrows: true,
+    cssEase: "linear",
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1360,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  });
 });

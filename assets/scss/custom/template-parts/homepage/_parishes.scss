@@ -128,9 +128,13 @@
   }
 
   .parishButtons {
+    margin-bottom: calc(2*var(--homepage-section-spacing));
     height: 310px;
     text-align: left;
     padding: 0 0rem;
+    @media screen and (min-width: $laptop){
+      margin-bottom: var(--homepage-section-spacing);
+    }
     a {
       text-decoration: none;
     }
