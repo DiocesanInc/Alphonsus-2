@@ -23,7 +23,7 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
 <div class="content-area" id="primary">
     <main class="site-main page-template-mass-times" id="main">
         <?php get_template_part('template-parts/headers/page-header'); ?>
-        i
+        
         <div class="mass-times-schedule">
             <div class="limit-width grid-container">
                 <?php while (have_rows("mass_times_sections", "options")) : the_row(); ?>
