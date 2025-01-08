@@ -29,7 +29,8 @@
   .news-container {
     @media screen and (min-width: $desktop) {
       .slick-arrow {
-        top: 15%;
+        top: calc((45vw - 50px) / 4);
+        transform: translate(0, -75%);
         &.slick-prev {
           left: 85px;
         }
