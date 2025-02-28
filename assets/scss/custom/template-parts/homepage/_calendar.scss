@@ -140,7 +140,7 @@
     dd.simcal-day {
       margin: 0;
 
-      .simcal-events {
+      .simcal-events, .simcal-events-toggle {
         display: none;
 
         &.simcal-visible {

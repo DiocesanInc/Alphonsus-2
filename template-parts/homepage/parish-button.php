@@ -8,13 +8,13 @@
  * @package celine
  */
 
-//  if (get_sub_field('link') || get_sub_field('image')) :
+ if (get_sub_field('link') || get_sub_field('image')) :
      $link = get_sub_field('link');
      $icon  = get_sub_field('image');
      $target = $link['target'] ?? 'target';
      $title  = get_sub_field('title');
      $url    = $link['url'] ?? '#';
-     //if ($link["url"] || $icon) :?>
+     if ($url || $icon) :?>
 
      <a class="featured-button" href="<?php echo $url; ?>" target="<?php echo $target; ?>" title="<?php echo $title; ?>">
         <img src="<?php echo $icon; ?>">
@@ -29,5 +29,5 @@
         <?php endwhile; ?>
         <?php endif;?>
      </a>
-     <?php //endif;
- //endif;
+     <?php endif;
+ endif;
