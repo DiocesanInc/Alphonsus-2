@@ -1,5 +1,7 @@
-jQuery(document).ready(($)=>{
+jQuery(document).ready(($) => {
   const theCarousel = () => {
+    const $c = $(".page-template-page-homepage .carousel");
+    if ($c.length == 0) return;
     $(".page-template-page-homepage .carousel").carousel({
       numVisible: 5,
       padding: 125,
