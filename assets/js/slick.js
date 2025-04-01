@@ -1,4 +1,4 @@
-jQuery(document).ready(function ($) {
+jQuery(function ($) {
   const tablet = 768;
   const laptop = 992;
   const desktop = 1279;
@@ -139,7 +139,7 @@ jQuery(document).ready(function ($) {
       },
     ],
   });
-  
+
   $(".page-template-homepage .parishButtons").slick({
     autoplay: false,
     dots: false,
@@ -153,22 +153,22 @@ jQuery(document).ready(function ($) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 1025,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 426,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
-      }
-    ]
+        },
+      },
+    ],
   });
 });

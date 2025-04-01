@@ -1,4 +1,4 @@
-jQuery(document).ready(($) => {
+jQuery(($) => {
   const theCarousel = () => {
     const $c = $(".page-template-page-homepage .carousel");
     if ($c.length == 0) return;

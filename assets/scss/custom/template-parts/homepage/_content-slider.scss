@@ -36,12 +36,6 @@
     }
   }
 
-  &[data-parallax="true"] {
-    .content-slider-post {
-      background-attachment: fixed;
-    }
-  }
-
   .content-slider-post {
     padding-block: 95px;
     background-repeat: no-repeat;
@@ -174,4 +168,10 @@
       position: static;
     }
   }
+}
+
+body:not(.ios)
+  .content-slider-container[data-parallax="true"]
+  .content-slider-post {
+  background-attachment: fixed;
 }

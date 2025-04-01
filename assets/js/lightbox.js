@@ -1,4 +1,4 @@
-jQuery(document).ready(function ($) {
+jQuery(function ($) {
   document.addEventListener("click", function (e) {
     if (
       e.target.matches(

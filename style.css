@@ -2746,9 +2746,6 @@ main .entry-header #crumbs a {
   position: relative;
   z-index: 1;
 }
-.content-slider-container[data-parallax=true] .content-slider-post {
-  background-attachment: fixed;
-}
 .content-slider-container .content-slider-post {
   padding-block: 95px;
   background-repeat: no-repeat;
@@ -2846,6 +2843,10 @@ main .entry-header #crumbs a {
 }
 .content-slider-container .slick-dots-wrapper .slick-dots {
   position: static;
+}
+
+body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-post {
+  background-attachment: fixed;
 }
 
 .mass-times-container {
