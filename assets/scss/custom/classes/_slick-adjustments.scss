@@ -10,11 +10,11 @@
 }
 
 .slick-arrow {
-  background: var(--clr-tertiary-st);
+  background: var(--clr-primary-st);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--clr-tertiary-st);
+  border: 2px solid var(--clr-primary-st);
   transition: var(--tr-background), var(--tr-color);
   &::before,
   &::after {

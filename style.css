@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.4.2
+Version: 1.4.3
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -1056,6 +1056,13 @@ a {
   background: var(--clr-primary);
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: inherit;
+}
+
 .clearfix {
   clear: both;
 }
@@ -1201,11 +1208,11 @@ body:not(.home) .limit-width {
 }
 
 .slick-arrow {
-  background: var(--clr-tertiary-st);
+  background: var(--clr-primary-st);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--clr-tertiary-st);
+  border: 2px solid var(--clr-primary-st);
   transition: var(--tr-background), var(--tr-color);
 }
 .slick-arrow::before, .slick-arrow::after {
@@ -2952,7 +2959,7 @@ main .entry-header #crumbs a {
   margin-bottom: 8px;
 }
 .mass-times-container .mass-times-right .mass-times-schedule .times .time .notes {
-  color: var(--clr-primary);
+  color: var(--clr-tertiary);
 }
 
 .calendar-container {
@@ -3035,33 +3042,37 @@ main .entry-header #crumbs a {
   justify-content: center;
   align-items: center;
   background-color: transparent !important;
-  border: 1px solid var(--clr-quaternary);
-  outline: 1px solid var(--clr-quaternary-st);
+  border: 1px solid var(--clr-primary);
+  outline: 1px solid var(--clr-primary-st);
   outline-offset: 3px;
   margin: 4px;
   padding: 10px;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span .simcal-date-format {
-  color: var(--clr-quaternary) !important;
+  color: var(--clr-primary) !important;
   font-size: clamp(20px, 3vw, 24px);
   font-weight: bold;
   background-color: transparent !important;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span:hover {
-  border-color: var(--clr-primary);
+  border-color: var(--clr-secondary);
+  outline-color: var(--clr-secondary-st);
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span:hover .simcal-date-format {
-  color: var(--clr-primary) !important;
+  color: var(--clr-secondary) !important;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-today {
-  background-color: var(--clr-secondary) !important;
-  border-color: var(--clr-secondary) !important;
+  background-color: var(--clr-primary) !important;
+  border-color: var(--clr-primary) !important;
+  outline-color: var(--clr-primary-st) !important;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-today .simcal-date-format {
   color: white !important;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current, .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current:hover {
-  background-color: var(--clr-primary) !important;
+  background-color: var(--clr-secondary) !important;
+  border-color: var(--clr-secondary) !important;
+  outline-color: var(--clr-secondary-st) !important;
 }
 .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current .simcal-date-format, .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current:hover .simcal-date-format {
   color: #fff !important;
@@ -3977,13 +3988,13 @@ main .entry-header #crumbs a {
 }
 .staff-member .staff-member-info .staff-member-position {
   font-size: 16px;
-  color: var(--clr-quaternary);
+  color: var(--clr-secondary);
   font-size: 18px;
   font-weight: bold;
   font-family: var(--font-main);
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper {
-  border-top: 1px solid var(--clr-quaternary);
+  border-top: 1px solid var(--clr-secondary);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3992,19 +4003,19 @@ main .entry-header #crumbs a {
   gap: 20px;
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a {
-  color: var(--clr-quaternary);
+  color: var(--clr-secondary);
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a:hover {
   text-decoration: none;
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a:hover i {
   color: white;
-  background: var(--clr-quaternary);
+  background: var(--clr-secondary);
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a i {
   transition: var(--tr-background), var(--tr-color);
   border-radius: 50%;
-  border: 1px solid var(--clr-quaternary);
+  border: 1px solid var(--clr-secondary);
   height: 40px;
   width: 40px;
   display: flex;

@@ -14,7 +14,7 @@ $show = getField("show_news", false,  false, false);
 
 if ($show && $news) : ?>
     <div class="news-container limit-width">
-        <h2 class="has-text-decoration text-decoration-is-centered has-primary-background-color-after">
+        <h2 class="has-text-decoration text-decoration-is-centered has-tertiary-background-color-after">
             <?php echo get_cat_name($news); ?>
         </h2>
         <div class="news-posts">

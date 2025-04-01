@@ -15,7 +15,7 @@ $calendar = get_field("calendar");
 <?php if ($show && get_field("calendar")) : ?>
     <div class="calendar-container limit-width">
         <?php if (get_field("calendar_heading")) : ?>
-            <h2 class="calendar-heading has-text-decoration text-decoration-is-centered has-primary-background-color-after">
+            <h2 class="calendar-heading has-text-decoration text-decoration-is-centered has-tertiary-background-color-after">
                 <?php the_field("calendar_heading"); ?>
             </h2>
         <?php endif; ?>

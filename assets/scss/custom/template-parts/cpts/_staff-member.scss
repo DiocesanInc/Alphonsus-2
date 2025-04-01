@@ -23,14 +23,14 @@
 
     .staff-member-position {
       font-size: 16px;
-      color: var(--clr-quaternary);
+      color: var(--clr-secondary);
       font-size: 18px;
       font-weight: bold;
       font-family: var(--font-main);
     }
 
     .staff-member-contact-wrapper {
-      border-top: 1px solid var(--clr-quaternary);
+      border-top: 1px solid var(--clr-secondary);
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -39,21 +39,21 @@
       gap: 20px;
 
       a {
-        color: var(--clr-quaternary);
+        color: var(--clr-secondary);
 
         &:hover {
           text-decoration: none;
 
           i {
             color: white;
-            background: var(--clr-quaternary);
+            background: var(--clr-secondary);
           }
         }
 
         i {
           transition: var(--tr-background), var(--tr-color);
           border-radius: 50%;
-          border: 1px solid var(--clr-quaternary);
+          border: 1px solid var(--clr-secondary);
           height: 40px;
           width: 40px;
           display: flex;

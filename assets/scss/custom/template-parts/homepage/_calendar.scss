@@ -87,30 +87,32 @@
         justify-content: center;
         align-items: center;
         background-color: transparent !important;
-        border: 1px solid var(--clr-quaternary);
-        outline: 1px solid var(--clr-quaternary-st);
+        border: 1px solid var(--clr-primary);
+        outline: 1px solid var(--clr-primary-st);
         outline-offset: 3px;
         margin: 4px;
         padding: 10px;
 
         .simcal-date-format {
-          color: var(--clr-quaternary) !important;
+          color: var(--clr-primary) !important;
           font-size: clamp(20px, 3vw, 24px);
           font-weight: bold;
           background-color: transparent !important;
         }
 
         &:hover {
-          border-color: var(--clr-primary);
+          border-color: var(--clr-secondary);
+          outline-color: var(--clr-secondary-st);
 
           .simcal-date-format {
-            color: var(--clr-primary) !important;
+            color: var(--clr-secondary) !important;
           }
         }
 
         &.simcal-today {
-          background-color: var(--clr-secondary) !important;
-          border-color: var(--clr-secondary) !important;
+          background-color: var(--clr-primary) !important;
+          border-color: var(--clr-primary) !important;
+          outline-color: var(--clr-primary-st) !important;
 
           .simcal-date-format {
             color: white !important;
@@ -119,7 +121,9 @@
 
         &.simcal-current,
         &.simcal-current:hover {
-          background-color: var(--clr-primary) !important;
+          background-color: var(--clr-secondary) !important;
+          border-color: var(--clr-secondary) !important;
+          outline-color: var(--clr-secondary-st) !important;
 
           .simcal-date-format {
             color: #fff !important;
