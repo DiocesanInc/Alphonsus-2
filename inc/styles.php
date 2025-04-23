@@ -97,7 +97,7 @@ function addEditorStylesThemeSupport()
     add_theme_support('editor-styles');
 }
 
-add_action('admin_init', "addEditorCustomVariables");
+//add_action('admin_init', "addEditorCustomVariables");
 
 function addEditorCustomVariables()
 {
