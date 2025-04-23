@@ -1354,6 +1354,71 @@ body:not(.home) .limit-width {
 .wp-block-button__link.the-button:disabled {
   cursor: not-allowed;
 }
+.the-button.has-primary-color,
+.wp-block-button__link.the-button.has-primary-color {
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  background: white;
+}
+.the-button.has-secondary-color,
+.wp-block-button__link.the-button.has-secondary-color {
+  color: var(--clr-secondary);
+  border: 1px solid var(--clr-secondary);
+  background: white;
+}
+.the-button.has-tertiary-color,
+.wp-block-button__link.the-button.has-tertiary-color {
+  color: var(--clr-tertiary);
+  border: 1px solid var(--clr-tertiary);
+  background: white;
+}
+.the-button.has-quaternary-color,
+.wp-block-button__link.the-button.has-quaternary-color {
+  color: var(--clr-quaternary);
+  border: 1px solid var(--clr-quaternary);
+  background: white;
+}
+.the-button.has-white-color,
+.wp-block-button__link.the-button.has-white-color {
+  color: white;
+  border: 1px solid white;
+}
+.the-button.has-black-color,
+.wp-block-button__link.the-button.has-black-color {
+  color: black;
+  border: 1px solid black;
+  background: white;
+}
+.the-button.has-primary-color:hover,
+.wp-block-button__link.the-button.has-primary-color:hover {
+  background: var(--clr-primary) !important;
+  color: white;
+}
+.the-button.has-secondary-color:hover,
+.wp-block-button__link.the-button.has-secondary-color:hover {
+  background: var(--clr-secondary) !important;
+  color: white;
+}
+.the-button.has-tertiary-color:hover,
+.wp-block-button__link.the-button.has-tertiary-color:hover {
+  background: var(--clr-tertiary) !important;
+  color: white;
+}
+.the-button.has-quaternary-color:hover,
+.wp-block-button__link.the-button.has-quaternary-color:hover {
+  background: var(--clr-quaternary) !important;
+  color: white;
+}
+.the-button.has-white-color:hover,
+.wp-block-button__link.the-button.has-white-color:hover {
+  background: white !important;
+  color: black;
+}
+.the-button.has-black-color:hover,
+.wp-block-button__link.the-button.has-black-color:hover {
+  background: black !important;
+  color: white;
+}
 
 .hero-info .the-button {
   --padding: 1.2em 2.77em;
@@ -2351,12 +2416,10 @@ main .entry-header #crumbs a {
     margin: auto;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1280px) {
   .hero {
     --hero-title-max-width: 50%;
   }
-}
-@media screen and (min-width: 1280px) {
   .hero .hero-video {
     width: 100%;
     height: auto;

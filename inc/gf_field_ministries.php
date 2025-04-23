@@ -116,7 +116,7 @@ if (class_exists("GF_Field_Checkbox")) {
                 foreach ($ministries as $ministry) {
                     $output .= "<li class='ministry'>";
                     $output .= "<input name='input_" . $id . "[]' type='checkbox' value='$ministry->post_title' id='$ministry->ID'>";
-                    $output .= "<label class='minitry-title' for='$ministry->ID'>$ministry->post_title</label>";
+                    $output .= "<label class='ministry-title' for='$ministry->ID'>$ministry->post_title</label>";
                     $output .= "</li>";
                 }
                 $output .= "</li></ul>";
