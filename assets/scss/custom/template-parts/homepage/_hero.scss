@@ -82,9 +82,9 @@
   }
 
   @media screen and (min-width: $laptop) {
-    --hero-title-max-width: 50%;
   }
   @media screen and (min-width: $desktop) {
+    --hero-title-max-width: 50%;
     .hero-video {
       width: 100%;
       height: auto;
