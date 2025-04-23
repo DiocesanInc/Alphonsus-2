@@ -29,4 +29,25 @@ jQuery(function ($) {
       };
     });
   }
+
+  // var docu = $(document).width();
+  // var wind = $(window).width();
+  // var zoom = docu / wind;
+  // console.log(zoom + " " + docu + " " + wind);
+  // $(window).resize(function() {
+  //     var root = document.documentElement;
+  //     var docu = $(document).width();
+  //     var wind = $(window).width();
+  //     var zoomNew = docu / wind;
+  //     // console.log(zoomNew + " " + docu + " " + wind);
+  //     // console.log("Base Zoom: " + zoom + "\nNew Zoom: " + zoomNew);
+  // console.log(document.documentElement.clientWidth + " " + window.innerWidth);
+  //     if (zoom != zoomNew) {
+  //       $('body').addClass('zoomed');
+  //       root.style.setProperty('--zoomed', zoomNew);
+  //     } else {
+  //       $('body').removeClass('zoomed');
+  //       root.style.setProperty('--zoomed', 1);
+  //     }
+  // });
 });
