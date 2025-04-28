@@ -74,7 +74,7 @@
   }
 
   @media screen and (min-width: $tablet) {
-    --hero-title-max-width: 70%;
+    --hero-title-max-width: 90%;
 
     .hero-title {
       margin: auto;
@@ -84,7 +84,6 @@
   @media screen and (min-width: $laptop) {
   }
   @media screen and (min-width: $desktop) {
-    --hero-title-max-width: 50%;
     .hero-video {
       width: 100%;
       height: auto;

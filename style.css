@@ -2410,16 +2410,13 @@ main .entry-header #crumbs a {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    --hero-title-max-width: 70%;
+    --hero-title-max-width: 90%;
   }
   .hero .hero-title {
     margin: auto;
   }
 }
 @media screen and (min-width: 1280px) {
-  .hero {
-    --hero-title-max-width: 50%;
-  }
   .hero .hero-video {
     width: 100%;
     height: auto;

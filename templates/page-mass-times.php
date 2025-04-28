@@ -45,7 +45,7 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
                                         <span class="languages"><?php the_sub_field("languages"); ?></span>
                                     <?php endif; ?>
                                     <?php if (get_sub_field("additional_notes")) : ?>
-                                        <span class="notes"><?php the_sub_field("additional_notes"); ?></span>
+                                        <div class="notes"><?php the_sub_field("additional_notes"); ?></div>
                                     <?php endif; ?>
                                 </div>
                             <?php endwhile; ?>
