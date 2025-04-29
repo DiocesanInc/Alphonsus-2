@@ -97,7 +97,7 @@ function addEditorStylesThemeSupport()
     add_theme_support('editor-styles');
 }
 
-//add_action('admin_init', "addEditorCustomVariables");
+add_action('admin_init', "addEditorCustomVariables");
 
 function addEditorCustomVariables()
 {
@@ -110,7 +110,7 @@ function addEditorCustomVariables()
 
 
         if (file_exists($custom_variables_path)) {
-            wp_enqueue_style("admin-custom-variables", $custom_variables_url);
+            add_editor_style($custom_variables_url);
         }
     } else {
 
