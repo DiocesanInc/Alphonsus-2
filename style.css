@@ -2725,7 +2725,7 @@ main .entry-header #crumbs a {
 }
 .featured-buttons-container .featured-button .featured-button-inner {
   display: flex;
-  padding: 75px 20px;
+  padding: 8.25vh 1.75vw;
   align-items: center;
   flex-direction: column;
   gap: 20px;
@@ -2750,6 +2750,11 @@ main .entry-header #crumbs a {
   font-size: clamp(32px, 4vw, 38px);
   text-align: center;
   padding-inline: 5px;
+}
+@media screen and (min-width: 1280px) {
+  .featured-buttons-container .featured-button .featured-button-inner .featured-button-title {
+    font-size: 2vw;
+  }
 }
 .featured-buttons-container .featured-button:hover {
   text-decoration: none;
@@ -3409,7 +3414,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .welcome-container {
   position: relative;
   text-align: center;
-  padding-block: 80px 220px;
+  padding-block: 9vh 24.5vh;
 }
 .welcome-container .welcome-line {
   color: var(--color);
@@ -3427,6 +3432,11 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .welcome-container .welcome-line {
   font-size: clamp(34px, 4vw, 42px);
+}
+@media screen and (min-width: 1280px) {
+  .welcome-container .welcome-line {
+    font-size: 2.2vw;
+  }
 }
 
 .homepage-section-cols {
