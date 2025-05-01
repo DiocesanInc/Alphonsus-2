@@ -116,6 +116,7 @@ function addEditorCustomVariables()
 
         add_editor_style(get_template_directory_uri() . '/custom-variables.css');
     }
+    add_editor_style(get_template_directory_uri() . '/style.css');
 }
 function addEditorStyles()
 {
