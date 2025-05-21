@@ -24,6 +24,9 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
     <main class="site-main page-template-mass-times" id="main">
         <?php get_template_part('template-parts/headers/page-header'); ?>
         
+        <div class="limit-width">
+            <?php the_content(); ?>
+        </div>
         <div class="mass-times-schedule">
             <div class="limit-width grid-container">
                 <?php while (have_rows("mass_times_sections", "options")) : the_row(); ?>
@@ -58,9 +61,6 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
                 <div class="bg-img" <?php echo $bg; ?>></div>
             <?php endif; ?>
 
-        </div>
-        <div class="limit-width">
-            <?php the_content(); ?>
         </div>
     </main>
 </div>
