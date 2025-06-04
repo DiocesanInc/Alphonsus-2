@@ -14,7 +14,8 @@ $slick = count(get_field("content_slider_items")) > 1 ? "true" : "false";
 
 <div class="content-slider-custom equal-height" data-is-slider="<?php echo $slick; ?>">
     <?php while (have_rows("content_slider_items")) : the_row(); ?>
-        <div class="content-slider-post" style="background-image:url(<?php echo get_sub_field("background_image")["url"]; ?>)">
+        <?php $bglink = get_sub_field("background_image")["url"] ?? '';?>
+        <div class="content-slider-post" style="background-image:url(<?php echo $bglink; ?>)">
             <div class="limit-width">
                 <h2 class="content-slider-post-heading has-text-decoration"><?php the_sub_field("heading"); ?></h2>
                 <h3 class="content-slider-post-subheading"><?php the_sub_field("subheading"); ?></h3>

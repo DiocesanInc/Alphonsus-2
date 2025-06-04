@@ -22,13 +22,15 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
 
             <?php if (get_field("mass_times_image_1")) : ?>
                 <div class="mass-times-image-wrapper">
-                    <img src="<?php echo get_field("mass_times_image_1")["url"]; ?>" alt="">
+                    <?php $image1 = get_field("mass_times_image_1")["url"] ?? '';?>
+                    <img src="<?php echo $image1; ?>" alt="">
                 </div>
             <?php endif; ?>
 
             <?php if (get_field("mass_times_image_2")) : ?>
                 <div class="mass-times-image-wrapper">
-                    <img src="<?php echo get_field("mass_times_image_2")["url"]; ?>" alt="">
+                    <?php $image2 = get_field("mass_times_image_2")["url"] ?? '';?>
+                    <img src="<?php echo $image2; ?>" alt="">
                 </div>
             <?php endif; ?>
         </div>

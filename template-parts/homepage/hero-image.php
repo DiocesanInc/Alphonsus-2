@@ -21,10 +21,10 @@ $has_arrows =
     <div class="hero" data-show-welcome="<?php echo $show_welcome; ?>">
         <div class="hero-slider" data-parallax="<?php echo $parallax; ?>" data-autoplay="<?php echo $autoplay; ?>" data-has-dots="<?php echo $has_dots; ?>" data-has-arrows="<?php echo $has_arrows; ?>">
             <?php while (have_rows("slider")) : the_row();
-                $bgImg = get_sub_field("image");
+                $bgImg = get_sub_field("image")['url'] ?? '';
             ?>
 
-                <div class="<?php echo $slideClasses; ?>" style="background-image: url(<?php echo $bgImg["url"] ?>)">
+                <div class="<?php echo $slideClasses; ?>" style="background-image: url(<?php echo $bgImg; ?>)">
 
 
 

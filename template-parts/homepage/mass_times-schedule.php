@@ -25,7 +25,7 @@
                     ?>
 
                             <div class="time">
-                                <span class="day"><?php the_sub_field("day"); ?>:</span>
+                                <span class="day"><?php echo get_sub_field("day"); ?>:</span>
                                 <span class="daytimes"><?php the_sub_field("day_times"); ?></span>
                                 <?php if (get_sub_field("languages")) : ?>
                                     <span class="languages"><?php the_sub_field("languages"); ?></span>

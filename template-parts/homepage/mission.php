@@ -8,7 +8,7 @@
  * @package alphonsus
  */
 
-$backgroundImage = get_field("mission_background_image")["url"];
+$backgroundImage = get_field("mission_background_image")["url"] ?? '';
 $position = get_field("mission_content_position");
 $header = get_field("mission_header");
 $content = get_field("mission_content");

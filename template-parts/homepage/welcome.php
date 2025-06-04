@@ -18,10 +18,10 @@ $show = getField("show_welcome", false,  false, false);
         <div class="limit-width">
 
             <h2 class="welcome-line welcome-line-1">
-                <?php the_field("welcome_line_1"); ?>
+                <?php echo get_field("welcome_line_1"); ?>
             </h2>
             <h3 class="welcome-line welcome-line-2">
-                <?php the_field("welcome_line_2"); ?>
+                <?php echo get_field("welcome_line_2"); ?>
             </h3>
         </div>
     </div>
