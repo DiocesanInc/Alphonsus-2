@@ -121,3 +121,11 @@
     }
   }
 }
+.page-template-homepage {
+ .parish-cluster > .mass-times-heading {
+    margin-bottom: 70px;
+    @media screen and (min-width: $laptop){
+      margin-bottom: 50px;
+    }
+ }
+}

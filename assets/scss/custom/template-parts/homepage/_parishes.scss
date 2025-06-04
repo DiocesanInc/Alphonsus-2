@@ -4,7 +4,7 @@
   // padding: 45px 0;
   position: relative;
   background: white;
-  text-align: center;
+  // text-align: center;
   .parish-scroll-title {
     font-size: clamp(36px, 4.5vw, 48px);
     margin-top: 0;
@@ -130,7 +130,6 @@
   .parishButtons {
     margin-bottom: calc(2*var(--homepage-section-spacing));
     height: 310px;
-    text-align: left;
     padding: 0 0rem;
     @media screen and (min-width: $laptop){
       margin-bottom: var(--homepage-section-spacing);

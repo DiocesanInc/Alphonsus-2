@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.5.0
+Version: 1.5.1
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -3028,6 +3028,15 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   color: var(--clr-tertiary);
 }
 
+.page-template-homepage .parish-cluster > .mass-times-heading {
+  margin-bottom: 70px;
+}
+@media screen and (min-width: 992px) {
+  .page-template-homepage .parish-cluster > .mass-times-heading {
+    margin-bottom: 50px;
+  }
+}
+
 .calendar-container {
   --inner-width: 90%;
   --weekly-padding-bottom: 110px;
@@ -3478,7 +3487,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   margin: 0px auto;
   position: relative;
   background: white;
-  text-align: center;
   /* Map Slider */
 }
 .parish-cluster .parish-scroll-title {
@@ -3599,7 +3607,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .parish-cluster .parishButtons {
   margin-bottom: calc(2 * var(--homepage-section-spacing));
   height: 310px;
-  text-align: left;
   padding: 0 0rem;
 }
 @media screen and (min-width: 992px) {
@@ -3722,6 +3729,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 
 .buttons-container.carousel {
+  text-align: center;
   height: 35.5rem;
   perspective: 44.375rem;
   overflow: hidden;
