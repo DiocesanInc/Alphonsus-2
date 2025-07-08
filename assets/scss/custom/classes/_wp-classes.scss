@@ -45,6 +45,10 @@
     clear: both;
 }
 
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: 50%;
+}
+
 .wp-block-group {
     clear: both;
 }

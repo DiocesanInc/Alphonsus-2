@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.5.1
+Version: 1.5.2
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -1527,6 +1527,10 @@ form.search-form .search-submit:hover {
   border-bottom: 0;
   margin-block: 1.5rem;
   clear: both;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: 50%;
 }
 
 .wp-block-group {
@@ -3328,6 +3332,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .contact-form-container .contact-form-heading {
   margin-bottom: 70px;
+  text-align: center;
 }
 .contact-form-container .gform_footer {
   text-align: right;
@@ -3447,6 +3452,12 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
     font-size: 2.2vw;
   }
 }
+.welcome-container:not(:has(+ .featured-buttons-container)) {
+  padding-bottom: 9vh;
+}
+.welcome-container + .mass-times-container {
+  margin-top: calc(0.5 * var(--homepage-section-spacing));
+}
 
 .homepage-section-cols {
   display: grid;
@@ -3486,12 +3497,12 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .parish-cluster {
   margin: 0px auto;
   position: relative;
-  background: white;
   /* Map Slider */
 }
 .parish-cluster .parish-scroll-title {
   font-size: clamp(36px, 4.5vw, 48px);
   margin-top: 0;
+  text-align: center;
 }
 .parish-cluster.parishFlex {
   margin: 20px auto 0;
@@ -3605,7 +3616,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   color: var(--clr-primary);
 }
 .parish-cluster .parishButtons {
-  margin-bottom: calc(2 * var(--homepage-section-spacing));
+  margin-bottom: calc(3 * var(--homepage-section-spacing));
   height: 310px;
   padding: 0 0rem;
 }
