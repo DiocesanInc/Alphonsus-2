@@ -41,7 +41,17 @@ jQuery(function ($) {
 
   //Shorthand day names to 2 letters, then move them to slider
   $(".simcal-day-label").each(function () {
-    var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+    switch($("html").attr("lang")) {
+      case 'en-US':    
+        var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+        break;
+      case 'es':    
+        var dayArray = new Array("DOM", "LUN", "MAR", "MI&#xC9;", "JUE", "VIE", "SAB");
+        break;
+        
+      default:
+        var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+    }
     var i;
     for (i = 0; i < 7; i++) {
       if (
