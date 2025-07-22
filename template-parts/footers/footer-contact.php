@@ -19,8 +19,8 @@ $icon_clr = getField("footer_icon_color", "options", true, 'white');
         <?php if (get_field("address", "options")) : ?>
         <div class="address">
             <i class="fa-solid fa-location-dot" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
-            <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>">
-                <?php echo get_field("address", "options")["title"]; ?>
+            <a target="_blank" href="<?php echo get_field("address", "options")["url"] ?? ''; ?>">
+                <?php echo get_field("address", "options")["title"] ?? ''; ?>
             </a>
         </div>
         <?php endif; ?>

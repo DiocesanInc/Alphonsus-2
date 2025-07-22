@@ -13,7 +13,7 @@
 <?php if (have_rows("footer_social_media", "options")) : while (have_rows("footer_social_media", "options")) : the_row() ?>
         <div class="footer-social-media">
             <h6>
-                <?php echo get_field("footer_social_media", "options")["header"]; ?>
+                <?php echo get_field("footer_social_media", "options")["header"] ?? ''; ?>
             </h6>
             <?php if (have_rows("social_media", "options")) : ?>
                 <ul class="social-media-link-list">

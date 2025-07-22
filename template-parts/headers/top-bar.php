@@ -51,9 +51,11 @@ $show_lang = get_field("show_language_selector", "options");
             <?php if (have_rows("social_media", "options")) : ?>
             <div class="social-media">
                 <?php while (have_rows("social_media", "options")) : the_row();
-                        $title = get_sub_field("link")["title"] ? get_sub_field("link")["title"] : get_sub_field("link")["url"];
+                        $url = get_sub_field("link")["url"] ?? '';
+                        // $title = get_sub_field("link")["title"] ? get_sub_field("link")["title"] : $url;
+                        $title = get_sub_field("link")["title"] ?? '';
                     ?>
-                <a target="_blank" title="<?php echo $title; ?>" href="<?php echo get_sub_field("link")["url"]; ?>"
+                <a target="_blank" title="<?php echo $title; ?>" href="<?php echo $url; ?>"
                     style="--icon-clr: <?php echo $icon_clr; ?>">
                     <?php echo get_sub_field("icon"); ?>
                 </a>

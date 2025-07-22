@@ -16,7 +16,7 @@ $form_id = get_field("contact_form")["id"];
     <div class="contact-form-container">
 
         <?php if (get_field("contact_form_heading")) : ?>
-            <h1 class="contact-form-heading has-text-decoration">
+            <h1 class="contact-form-heading has-text-decoration text-decoration-is-centered has-primary-background-color-after">
                 <?php the_field("contact_form_heading"); ?>
             </h1>
         <?php endif; ?>

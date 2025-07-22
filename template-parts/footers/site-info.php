@@ -22,9 +22,11 @@ $icon_clr = getField("site_info_social_media_icons_color", "options", true, "whi
             <?php if (have_rows("social_media", "options")) : ?>
                 <div class="social-media">
                     <?php while (have_rows("social_media", "options")) : the_row();
-                        $title = get_sub_field("link")["title"] ? get_sub_field("link")["title"] : get_sub_field("link")["url"];
+                        // $title = get_sub_field("link")["title"] ? get_sub_field("link")["title"] : get_sub_field("link")["url"];
+                        $url = get_sub_field("link")["url"] ?? '';
+                        $title = get_sub_field("link")["title"] ?? '';
                     ?>
-                        <a target="_blank" title="<?php echo $title; ?>" href="<?php echo get_sub_field("link")["url"]; ?>"
+                        <a target="_blank" title="<?php echo $title; ?>" href="<?php echo $url; ?>"
                             style="--icon-clr: <?php echo $icon_clr; ?>">
                             <?php echo get_sub_field("icon"); ?>
                         </a>

@@ -3,6 +3,72 @@ jQuery(function ($) {
   const laptop = 992;
   const desktop = 1279;
 
+  //Parish Cluster Slider
+  var $sliderImage1 = $(".page-template-homepage .mass-times-left .image1");
+  $sliderImage1.slick({
+    autoplay: false,
+    arrows: false,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    asNavFor: '.mass-times-container .image2'
+  });
+
+  var $sliderImage2 = $(".page-template-homepage .mass-times-left .image2");
+  $sliderImage2.slick({
+    autoplay: false,
+    dots: true,
+    arrows: false,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    asNavFor: '.mass-times-container .image1'
+  });
+
+  var $sliderText = $(".page-template-homepage .mass-times-right-slides");
+  $sliderText.slick({
+    autoplay: true,
+    autoplaySpeed: 8000,
+    pauseOnFocus: true,
+    dots: true,
+    arrows: true,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    mobileFirst: true,
+    asNavFor: '.mass-times-container .mass-slides'
+  });
+  
+  var $sliderDots = $(".page-template-homepage .mass-times-nav-left");
+  $sliderDots.slick({
+    dots: true,
+    arrows: false,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    mobileFirst: true,
+    asNavFor: '.mass-times-container .mass-nav-l'
+  });
+  
+  // var $sliderDots = $(".page-template-homepage .mass-times-nav-right");
+  // $sliderDots.slick({
+  //   autoplay: true,
+  //   autoplaySpeed: 8000,
+  //   dots: false,
+  //   arrows: true,
+  //   cssEase: "linear",
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   infinite: true,
+  //   mobileFirst: true,
+  //   asNavFor: '.mass-times-container .mass-nav-r'
+  // });
+  //End Parish Cluster Slider
+
   function isParallax($slider) {
     $slider.on("init", function (event, slick) {
       $(this).find(".slick-list").css("transform", "none");
