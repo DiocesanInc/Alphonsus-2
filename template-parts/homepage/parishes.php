@@ -10,7 +10,7 @@
  ?>
  <div class="parish-cluster">
     <?php if(get_field('parish_scroll_title')):?> 
-        <h2 class="parish-scroll-title has-text-decoration text-decoration-is-centered has-primary-background-color-after">
+        <h2 class="parish-scroll-title has-text-decoration text-decoration-is-centered has-tertiary-background-color-after">
             <?php echo get_field('parish_scroll_title');?>
         </h2>
     <?php endif;?>
@@ -24,6 +24,8 @@
         </div>
     <?php elseif(have_rows('parish_carousel')&&(get_field('cluster_style') == 'carousel')) : 
         get_template_part("template-parts/homepage/parish", "carousel");?>
+    <?php elseif(have_rows('parish_slider')&&(get_field('cluster_style') == 'slider')) : 
+        get_template_part("template-parts/homepage/parish", "slider");?>
     <?php endif;?>
  
  </div>

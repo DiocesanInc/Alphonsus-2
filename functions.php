@@ -95,3 +95,17 @@ $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
 // $myUpdateChecker->setAuthentication('your-token-here');
+
+function my_acf_prepare_field( $field ) {
+
+    $pageID = get_option('page_on_front');
+    if (get_field('cluster_style', $pageID) === 'slider') {
+        return false;
+    }
+    return $field;
+}
+
+// Apply to fields named "mass_times_sections".
+add_filter('acf/prepare_field/name=mass_times_sections', 'my_acf_prepare_field');
+// Apply to field with key "field_61a917a7b95ea".
+add_filter('acf/prepare_field/key=field_61a917a7b95ea', 'my_acf_prepare_field');

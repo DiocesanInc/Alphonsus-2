@@ -4873,7 +4873,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6244c66d6d197',
-			'label' => 'Section Order',
+			'label' => 'Section Order (Non-cluster Homepage only)',
 			'name' => 'section_order',
 			'aria-label' => '',
 			'type' => 'repeater',

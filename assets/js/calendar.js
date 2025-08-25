@@ -46,7 +46,7 @@ jQuery(function ($) {
         var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
         break;
       case 'es':    
-        var dayArray = new Array("DOM", "LUN", "MAR", "MI&#xC9;", "JUE", "VIE", "SAB");
+        var dayArray = new Array("DOM", "LUN", "MAR", "MI&#xC9;", "JUE", "VIE", "S&#xC1;B");
         break;
         
       default:

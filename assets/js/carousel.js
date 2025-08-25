@@ -1,8 +1,8 @@
 jQuery(($) => {
   const theCarousel = () => {
-    const $c = $(".page-template-page-homepage .carousel");
+    const $c = $(".home .carousel");
     if ($c.length == 0) return;
-    $(".page-template-page-homepage .carousel").carousel({
+    $(".home .carousel").carousel({
       numVisible: 5,
       padding: 125,
     });

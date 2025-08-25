@@ -11,7 +11,16 @@ function acf_mass_times()
             'type' => 'tab',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            // 'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_626c37cd602a4',
+                        'operator' => '!=',
+                        'value' => 'slider',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
