@@ -2304,6 +2304,7 @@ footer .site-info .limit-width .social-media a i {
 .site-header .header-nav .site-branding .header-logo-link {
   display: block;
   height: var(--max-logo-height);
+  margin-right: 20px;
 }
 .site-header .header-nav .site-branding .header-logo-link .header-logo {
   height: var(--max-logo-height, calc(var(--header-height) - 2rem));
