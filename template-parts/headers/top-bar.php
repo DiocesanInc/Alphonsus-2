@@ -10,6 +10,7 @@
 
 $bg_clr = getField("top_bar_bg_color", "options", true, "black");
 $icon_clr = getField("top_bar_icon_color", "options", true, "white");
+$font_clr = getField("top_bar_font_color", "options", true, "white");
 $show_address = get_field("top_bar_show_address", "options");
 $show_email = get_field("top_bar_show_email", "options");
 $show_phone_number = get_field("top_bar_show_phone_number", "options");
@@ -21,7 +22,7 @@ $show_lang = get_field("show_language_selector", "options");
         <div class="top-bar-left">
             <?php if ($show_address) : ?>
             <div class="address">
-                <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>">
+                <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-location-dot" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
                     <?php echo get_field("address", "options")["title"]; ?>
                 </a>
@@ -30,7 +31,7 @@ $show_lang = get_field("show_language_selector", "options");
 
             <?php if ($show_email) : ?>
             <div class="email">
-                <a href="mailto:<?php echo get_field("email", "options"); ?>">
+                <a href="mailto:<?php echo get_field("email", "options"); ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-envelope" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
                     <?php echo get_field("email", "options"); ?>
                 </a>
@@ -39,7 +40,7 @@ $show_lang = get_field("show_language_selector", "options");
 
             <?php if ($show_phone_number) : ?>
             <div class="phone">
-                <a href="tel:<?php echo get_field("phone", "options"); ?>">
+                <a href="tel:<?php echo get_field("phone", "options"); ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-mobile-screen-button" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
                     <?php echo get_field("phone", "options"); ?>
                 </a>
