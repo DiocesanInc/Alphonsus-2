@@ -2117,6 +2117,18 @@ footer .quicklinks-container #footer-quicklinks li::marker {
 footer .footer-content .footer-logo-wrapper .footer-logo {
   max-height: 100%;
 }
+footer .footer-content .the-button {
+  margin-top: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--footer-button-background-color, var(--clr-quaternary));
+  color: var(--footer-button-font-color, white);
+  border: 1px solid var(--footer-button-border-color, var(--clr-quaternary));
+}
+footer .footer-content .the-button:hover {
+  background: var(--primary-button-background-color-hover, white);
+  color: var(--primary-button-font-color-hover, var(--clr-quaternary));
+}
 footer .footer-contact-inner {
   display: flex;
   flex-direction: column;

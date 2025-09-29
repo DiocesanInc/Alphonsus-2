@@ -54,7 +54,7 @@ acf_add_local_field_group(array(
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '50',
+                'width' => '25',
                 'class' => '',
                 'id' => '',
             ),
@@ -63,6 +63,21 @@ acf_add_local_field_group(array(
             'rows' => 4,
             'placeholder' => '',
             'new_lines' => '',
+        ),
+        array(
+            'key' => 'field_6196abe21fgdrftz',
+            'label' => 'Button (Optional)',
+            'name' => 'footer_button',
+            'type' => 'link',
+            'instructions' => '*Placed below footer content',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '25',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
         ),
         array(
             'key' => 'field_626817e020a5f',

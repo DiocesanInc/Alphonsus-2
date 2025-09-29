@@ -23,4 +23,11 @@
         <?php endif; ?>
     </div>
     <?php the_field("footer_content", "options"); ?>
+    <?php if (get_field("footer_button", "options")) : ?>
+    <a class="the-button" href="<?php echo esc_url(get_field("footer_button", "options")["url"]); ?>"
+        target="<?php echo get_field("footer_button", "options")["target"] ?? '_self'; ?>"
+        title="<?php echo esc_attr(get_field("footer_button", "options")["title"] ?? ''); ?>">
+        <?php echo esc_attr(get_field("footer_button", "options")["title"] ?? ''); ?>
+    </a>
+    <?php else: endif;?>
 </div>

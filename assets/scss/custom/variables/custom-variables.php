@@ -383,6 +383,13 @@ $variables->addCssRule(
         "--secondary-button-background-color-hover" => get_field("secondary_button", "options")["button_background_color_hover"],
         "--secondary-button-font-color-hover" => get_field("secondary_button", "options")["button_font_color_hover"],
         "--secondary-button-border-color-hover" => get_field("secondary_button", "options")["button_border_color_hover"],
+        /**FOOTER BUTTON */
+        "--footer-button-background-color" => get_field("footer_button_color", "options")["button_background_color"],
+        "--footer-button-font-color" => get_field("footer_button_color", "options")["button_font_color"],
+        "--footer-button-border-color" => get_field("footer_button_color", "options")["button_border_color"],
+        "--footer-button-background-color-hover" => get_field("footer_button_color", "options")["button_background_color_hover"],
+        "--footer-button-font-color-hover" => get_field("footer_button_color", "options")["button_font_color_hover"],
+        "--footer-button-border-color-hover" => get_field("footer_button_color", "options")["button_border_color_hover"],
     )
 );
 
