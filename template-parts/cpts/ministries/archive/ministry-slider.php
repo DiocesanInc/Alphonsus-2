@@ -57,7 +57,7 @@ $has_lightbox = get_field("open_lightbox") ? "true" : "false";
                     "terms" => $group->term_id
                 )
             ),
-            "orderby" => "title",
+            "orderby" => "menu_order title",
             "order" => "ASC",
             "numberposts" => -1
         );
