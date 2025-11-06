@@ -29,7 +29,7 @@ $bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
         </div>
 
         <?php $pageID = get_option('page_on_front');
-        if(get_field('cluster_style', $pageID) !== 'slider'):?>
+        if((get_field('cluster_style', $pageID) !== 'slider') || (get_page_template_slug($pageID) === 'templates/page-homepage.php')):?>
         <div class="mass-times-schedule">
             <div class="limit-width grid-container">
                 <?php while (have_rows("mass_times_sections", "options")) : the_row(); ?>

@@ -99,7 +99,7 @@ $myUpdateChecker->setBranch('main');
 function my_acf_prepare_field( $field ) {
 
     $pageID = get_option('page_on_front');
-    if (get_field('cluster_style', $pageID) === 'slider') {
+    if ((get_field('cluster_style', $pageID) === 'slider') && (get_page_template_slug($pageID) === 'templates/page-homepage-cluster.php')) {
         return false;
     }
     return $field;
