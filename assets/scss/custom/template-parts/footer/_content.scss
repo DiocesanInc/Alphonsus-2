@@ -15,8 +15,9 @@
     color: var(--footer-button-font-color, white);
     border: 1px solid var(--footer-button-border-color, var(--clr-quaternary));
     &:hover {
-      background: var(--primary-button-background-color-hover, white);
-      color: var(--primary-button-font-color-hover, var(--clr-quaternary));
+      background: var(--footer-button-background-color-hover, white);
+      color: var(--footer-button-font-color-hover, var(--clr-quaternary));
+    border: 1px solid var(--footer-button-border-color-hover, var(--clr-quaternary));
     }
   }
 }
