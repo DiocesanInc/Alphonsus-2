@@ -13,17 +13,15 @@ jQuery(function ($) {
   });
 
   //Add class to today's date
-  $('.simcal-day-label[style*="border-bottom: 1px solid #dedede;"]').each(
-    function () {
-      $(this).addClass("simcal-today");
-      $(this).find("> span").addClass("simcal-today");
-      var current = $(this).attr("data-simcal");
-      $(".calendar-inner ul.simcal-events").removeClass("simcal-visible");
-      $(
-        ".calendar-inner ul.simcal-events[data-simcal=" + current + "]"
-      ).addClass("simcal-visible");
-    }
-  );
+  $('.simcal-day-label[data-simcal="16"]').each(function () {
+    $(this).addClass("simcal-today");
+    $(this).find("> span").addClass("simcal-today");
+    var current = $(this).attr("data-simcal");
+    $(".calendar-inner ul.simcal-events").removeClass("simcal-visible");
+    $(".calendar-inner ul.simcal-events[data-simcal=" + current + "]").addClass(
+      "simcal-visible"
+    );
+  });
 
   //Moves active class to selected date
   $(".simcal-day-label > span").on("click", function () {
@@ -41,16 +39,40 @@ jQuery(function ($) {
 
   //Shorthand day names to 2 letters, then move them to slider
   $(".simcal-day-label").each(function () {
-    switch($("html").attr("lang")) {
-      case 'en-US':    
-        var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+    switch ($("html").attr("lang")) {
+      case "en-US":
+        var dayArray = new Array(
+          "SUN",
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI",
+          "SAT"
+        );
         break;
-      case 'es':    
-        var dayArray = new Array("DOM", "LUN", "MAR", "MI&#xC9;", "JUE", "VIE", "S&#xC1;B");
+      case "es":
+        var dayArray = new Array(
+          "DOM",
+          "LUN",
+          "MAR",
+          "MI&#xC9;",
+          "JUE",
+          "VIE",
+          "S&#xC1;B"
+        );
         break;
-        
+
       default:
-        var dayArray = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+        var dayArray = new Array(
+          "SUN",
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI",
+          "SAT"
+        );
     }
     var i;
     for (i = 0; i < 7; i++) {
