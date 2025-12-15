@@ -10,15 +10,15 @@ window.addEventListener("scroll", () => stickyHeader());
 const stickyHeader = () => {
   if (!document.getElementById("masthead")) return;
   const header = document.getElementById("masthead");
-  const sticky = header.offsetTop;
-  const hcl = header.classList;
+  const sticky = header?.offsetTop;
+  const hcl = header?.classList;
   const tb = document.querySelector("#header-top-bar");
-  const tbcl = tb.classList;
+  const tbcl = tb?.classList;
   if (window.scrollY > sticky) {
-    hcl.add("sticky");
-    tbcl.add("hidden");
+    hcl?.add("sticky");
+    tbcl?.add("hidden");
   } else {
-    hcl.remove("sticky");
-    tbcl.remove("hidden");
+    hcl?.remove("sticky");
+    tbcl?.remove("hidden");
   }
 };
