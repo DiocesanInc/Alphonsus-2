@@ -10,6 +10,10 @@ body:not(.home) .limit-width {
   @media screen and (min-width: $laptop) {
     --limit-width: 80%;
   }
+
+  .footer-wrapper.limit-width {
+    --limit-width: 90%;
+  }
 }
 
 .limit-width-laptop-up {
