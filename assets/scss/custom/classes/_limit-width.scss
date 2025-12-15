@@ -11,7 +11,7 @@ body:not(.home) .limit-width {
     --limit-width: 80%;
   }
 
-  .footer-wrapper.limit-width {
+  &.footer-wrapper {
     --limit-width: 90%;
   }
 }
