@@ -5041,6 +5041,36 @@ acf_add_local_field_group(array(
 			'ui' => 1,
 		),
 		array(
+			'key' => 'field_65ba761d71bzz',
+			'label' => 'Hero Slider Autoplay Speed',
+			'name' => 'hero_slider_autoplay_speed',
+			'aria-label' => '',
+			'type' => 'number',
+			'instructions' => '*speed of autoplay. Max 10000 (10 seconds)',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_65b2af21b3be1',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '20',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 5000,
+			'min' => 1,
+			'max' => 10000,
+			'placeholder' => 5000,
+			'step' => 1,
+			'prepend' => '',
+			'append' => 'milliseconds',
+		),
+		array(
 			'key' => 'field_65ba761d71b8a',
 			'label' => 'Hero Height',
 			'name' => 'hero_height',

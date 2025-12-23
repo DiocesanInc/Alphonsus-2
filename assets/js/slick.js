@@ -80,9 +80,11 @@ jQuery(function ($) {
   const $hero_slider = $(".page-template-homepage .hero-slider");
   const hero_parallax = $hero_slider.data("parallax");
   const hero_autoplay = $hero_slider.data("autoplay");
+  const hero_autoplay_speed = $hero_slider.data("autoplay-speed") ? $hero_slider.data("autoplay-speed") : "5000";
   const show_welcome = $(".page-template-homepage .hero").data("showWelcome");
   const hero_has_dots = show_welcome ? $hero_slider.data("hasDots") : false;
   const hero_has_arrows = $hero_slider.data("hasArrows");
+  console.log(hero_autoplay_speed);
 
   if (hero_parallax) {
     isParallax($hero_slider);
@@ -90,6 +92,7 @@ jQuery(function ($) {
 
   $hero_slider.slick({
     autoplay: hero_autoplay,
+    autoplaySpeed: hero_autoplay_speed,
     arrows: hero_has_arrows,
     cssEase: "linear",
     dots: hero_has_dots,

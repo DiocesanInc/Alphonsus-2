@@ -11,6 +11,7 @@
 $slideClasses = get_field("parallax_scrolling") ? "hero-slide parallax" : "hero-slide";
 $parallax = get_field("parallax_scrolling") ? "true" : "false";
 $autoplay = get_field("hero_slider_autoplay", "options") ? "true" : "false";
+$autoplay_speed = get_field("hero_slider_autoplay_speed", "options") ? get_field("hero_slider_autoplay_speed", "options") : "false";
 $show_welcome = getField("show_welcome", false,  false, "false");
 $has_dots =
     get_field("hero_has_dots", "options") ? "true" : "false";
@@ -19,7 +20,7 @@ $has_arrows =
 ?>
 <?php if (have_rows("slider")) : ?>
     <div class="hero" data-show-welcome="<?php echo $show_welcome; ?>">
-        <div class="hero-slider" data-parallax="<?php echo $parallax; ?>" data-autoplay="<?php echo $autoplay; ?>" data-has-dots="<?php echo $has_dots; ?>" data-has-arrows="<?php echo $has_arrows; ?>">
+        <div class="hero-slider" data-parallax="<?php echo $parallax; ?>" data-autoplay="<?php echo $autoplay; ?>" data-autoplay-speed="<?php echo $autoplay_speed; ?>" data-has-dots="<?php echo $has_dots; ?>" data-has-arrows="<?php echo $has_arrows; ?>">
             <?php while (have_rows("slider")) : the_row();
                 $bgImg = get_sub_field("image")['url'] ?? '';
             ?>
