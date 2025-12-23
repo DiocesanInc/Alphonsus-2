@@ -2319,8 +2319,8 @@ footer .site-info .limit-width .social-media a i {
 @media screen and (min-width: 768px) {
   .site-header .header-nav .site-branding .header-logo-link .header-logo {
     max-width: none;
-    -o-object-fit: none;
-       object-fit: none;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 .site-header #site-navigation {

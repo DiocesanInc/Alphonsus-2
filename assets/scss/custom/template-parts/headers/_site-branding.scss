@@ -9,7 +9,7 @@
       object-fit: contain;
       @media screen and (min-width: $tablet) {
         max-width: none;
-        object-fit: none;
+        object-fit: fill;
       }
     }
   }
