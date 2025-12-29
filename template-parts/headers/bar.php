@@ -10,7 +10,7 @@
 ?>
 
 <?php
-// get_template_part("template-parts/headers/top-bar");
+get_template_part("template-parts/headers/top-bar");
 ?>
 <div class="header-nav limit-width-wide">
     <?php
