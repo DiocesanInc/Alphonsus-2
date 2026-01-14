@@ -3,7 +3,20 @@
     flex-wrap: wrap;
 
     .back-button-container {
-      margin-top: 2rem;
+      &.desktop-only {
+        margin-top: 2rem;
+
+        display: none;
+        @media screen and (min-width: $desktop) {
+          display: block;
+        }
+      }
+
+      &.mobile-only {
+        @media screen and (min-width: $desktop) {
+          display: none;
+        }
+      }
     }
 
     .contact-persons-container {

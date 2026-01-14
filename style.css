@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.7.1
+Version: 1.7.2
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -4464,8 +4464,19 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .single-ministry .single-container {
   flex-wrap: wrap;
 }
-.single-ministry .single-container .back-button-container {
+.single-ministry .single-container .back-button-container.desktop-only {
   margin-top: 2rem;
+  display: none;
+}
+@media screen and (min-width: 1280px) {
+  .single-ministry .single-container .back-button-container.desktop-only {
+    display: block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .single-ministry .single-container .back-button-container.mobile-only {
+    display: none;
+  }
 }
 .single-ministry .single-container .contact-persons-container {
   --num-cols: 1;

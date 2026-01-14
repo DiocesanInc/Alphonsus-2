@@ -22,11 +22,13 @@ $contacts = get_field("contacts");
 
 ?>
 
-<article class="entry-content limit-width single-ministry-article">
+<article class="entry-content single-ministry-article">
     <div class="the-content">
         <?php the_content(); ?>
-        <div class="back-button-container align-center">
-            <a href="<?php echo $backlink; ?>" class="the-button has-primary-color has-primary-border-color has-transparent-background-color" title="back">
+        <div class="back-button-container align-center desktop-only">
+            <a href="<?php echo $backlink; ?>"
+                class="the-button has-primary-color has-primary-border-color has-transparent-background-color"
+                title="back">
                 Go Back
             </a>
         </div>
@@ -95,4 +97,11 @@ $contacts = get_field("contacts");
             </div>
         <?php endforeach; ?>
     </div>
-<?php endif;
+<?php endif; ?>
+
+<div class="back-button-container align-center mobile-only">
+    <a href="<?php echo $backlink; ?>"
+        class="the-button has-primary-color has-primary-border-color has-transparent-background-color" title="back">
+        Go Back
+    </a>
+</div>
