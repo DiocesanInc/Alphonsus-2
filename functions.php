@@ -94,9 +94,10 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
-// $myUpdateChecker->setAuthentication('your-token-here');
+$myUpdateChecker->setAuthentication('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');
 
-function my_acf_prepare_field( $field ) {
+function my_acf_prepare_field($field)
+{
 
     $pageID = get_option('page_on_front');
     if ((get_field('cluster_style', $pageID) === 'slider') && (get_page_template_slug($pageID) === 'templates/page-homepage-cluster.php')) {
