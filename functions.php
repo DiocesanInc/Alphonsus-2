@@ -94,7 +94,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
-$myUpdateChecker->setAuthentication('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');
+// $myUpdateChecker->setAuthentication('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');
 
 function my_acf_prepare_field($field)
 {

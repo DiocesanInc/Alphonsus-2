@@ -19,7 +19,11 @@ get_header();
         <div class="limit-width">
             <?php the_content(); ?>
 
-            <iframe src="<?php echo get_field("google_maps_iframe", "options")["url"]; ?>" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <?php if (get_field("google_maps_iframe", "options")): ?>
+                <iframe src="<?php echo get_field("google_maps_iframe", "options")["url"]; ?>" width="100%" height="450px"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <?php endif; ?>
         </div>
 
     </main>
