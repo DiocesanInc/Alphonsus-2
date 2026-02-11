@@ -39,5 +39,7 @@ function alphonsusScripts()
 
         wp_enqueue_script($filename, get_template_directory_uri() . "/assets/js/$filename", array("jquery"), $hash, false);
     }
+
+    // wp_dequeue_script("calendar.js");
 }
 add_action('wp_enqueue_scripts', 'alphonsusScripts', 10);

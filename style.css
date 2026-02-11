@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.7.3
+Version: 1.7.4
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -3074,6 +3074,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   padding: 0%;
   max-width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 @media screen and (min-width: 992px) {
   .calendar-container {
@@ -3190,39 +3191,48 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .calendar-container .calendar-event-slick dd.simcal-day {
   margin: 0;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle {
   display: none;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible {
   display: block;
   padding: 0;
   margin: auto 0 10px;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event {
   margin: 0;
   padding: 30px 0;
   text-align: left;
   border-bottom: 1px solid var(--clr-quaternary);
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event > .simcal-event-title, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event > .simcal-event-title {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event > .simcal-event-title,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event > .simcal-event-title {
   display: none;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event + .simcal-event, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event + .simcal-event {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event + .simcal-event,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event + .simcal-event {
   margin-top: 10px;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .simcal-event-details, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .simcal-event-details {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .simcal-event-details,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .simcal-event-details {
   max-width: 90%;
   margin-inline: auto;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-date-wrapper, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-date-wrapper {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-date-wrapper,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-date-wrapper {
   color: var(--clr-font);
   font-weight: bold;
   font-size: 22px;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-title, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-title {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-title,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-title {
   margin-block: 22px 15px;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-title .simcal-event-title, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-title .simcal-event-title {
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-title .simcal-event-title,
+.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-title .simcal-event-title {
   font-family: var(--font-heading);
   font-weight: bold;
   font-size: 30px;

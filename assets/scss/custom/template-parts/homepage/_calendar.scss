@@ -9,6 +9,7 @@
   padding: 0%;
   max-width: 100%;
   overflow: hidden;
+  width: 100%;
 
   @media screen and (min-width: $laptop) {
     --inner-width: 85%;
@@ -144,7 +145,8 @@
     dd.simcal-day {
       margin: 0;
 
-      .simcal-events, .simcal-events-toggle {
+      .simcal-events,
+      .simcal-events-toggle {
         display: none;
 
         &.simcal-visible {

@@ -28,8 +28,8 @@ $calendar = get_field("calendar");
 
         <?php if (get_field("calendar_link")) : ?>
             <div class="view-all-link-wrapper">
-                <?php $link = get_field("calendar_link")["url"] ?? '';?>
-                <?php $title = get_field("calendar_link")["title"] ?? '';?>
+                <?php $link = get_field("calendar_link")["url"] ?? ''; ?>
+                <?php $title = get_field("calendar_link")["title"] ?? ''; ?>
                 <a class="the-button" href="<?php echo $link; ?>">
                     <?php echo $title; ?>
                 </a>
