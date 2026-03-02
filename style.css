@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.7.4
+Version: 1.7.4.1
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -932,6 +932,11 @@ textarea {
     var(--max-logo-height, 72px) + var(--top-bar-height, 0px) +
       var(--header-extra-height, 25px)
   );
+}
+:root:has(#header-top-bar.hidden) {
+  --top-bar-height: 0px;
+}
+:root {
   --hero-height: 60vh;
   --page-header-height: 30vh;
   --grey: #efefef;
@@ -947,9 +952,6 @@ textarea {
   --tr-opacity: opacity var(--animation-speed) ease;
   --content-inset: 0px;
   --homepage-section-spacing: 40px;
-}
-:root:has(#header-top-bar.hidden) {
-  --top-bar-height: 0px;
 }
 @media screen and (min-width: 992px) {
   :root {
@@ -2086,9 +2088,6 @@ form .gform_body textarea:focus-visible {
     opacity: 0.5;
   }
 }
-footer {
-  --num-cols: 1;
-}
 footer .quicklinks-container #footer-quicklinks {
   padding: 0;
   margin: 0 0 0 20px;
@@ -2149,6 +2148,9 @@ footer .footer-contact-inner .email {
   flex-direction: row;
   align-items: center;
   gap: 15px;
+}
+footer {
+  --num-cols: 1;
 }
 footer .footer-wrapper {
   display: grid;
@@ -3530,7 +3532,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .parish-cluster {
   margin: 0px auto;
   position: relative;
-  /* Map Slider */
 }
 .parish-cluster .parish-scroll-title {
   font-size: clamp(36px, 4.5vw, 48px);
@@ -3589,6 +3590,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial.slick-active {
   opacity: 1;
+}
+.parish-cluster {
+  /* Map Slider */
 }
 .parish-cluster .parish-map-title {
   margin-left: 8%;
@@ -3729,9 +3733,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   }
 }
 @media screen and (min-width: 992px) {
-  .parish-cluster {
-    /* Map Slider */
-  }
   .parish-cluster.parishFlex {
     flex-direction: row;
   }
@@ -3744,6 +3745,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   .parish-cluster.parishFlex .parishScroll {
     margin: 0 0 0 20px;
     width: 50%;
+  }
+  .parish-cluster {
+    /* Map Slider */
   }
   .parish-cluster .parish-maps {
     display: flex;
