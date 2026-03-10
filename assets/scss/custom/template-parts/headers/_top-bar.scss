@@ -14,6 +14,9 @@
     padding: 0;
     height: 0;
     opacity: 0;
+    .top-bar-inner {
+      pointer-events: none;
+    }
   }
 
   a {

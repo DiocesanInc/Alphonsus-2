@@ -15,6 +15,7 @@ $show_address = get_field("top_bar_show_address", "options");
 $show_email = get_field("top_bar_show_email", "options");
 $show_phone_number = get_field("top_bar_show_phone_number", "options");
 $show_lang = get_field("show_language_selector", "options");
+$addressURL = get_field("address", "options")["url"] ?? '';
 ?>
 
 <div id="header-top-bar" class="top-bar" style="--bg-clr: <?php echo $bg_clr; ?>">
@@ -22,7 +23,7 @@ $show_lang = get_field("show_language_selector", "options");
         <div class="top-bar-left">
             <?php if ($show_address) : ?>
             <div class="address">
-                <a target="_blank" href="<?php echo get_field("address", "options")["url"]; ?>" style="--font-clr: <?php echo $font_clr; ?>">
+                <a target="_blank" href="<?php echo $addressURL; ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-location-dot" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
                     <?php echo get_field("address", "options")["title"]; ?>
                 </a>

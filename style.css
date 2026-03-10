@@ -1557,6 +1557,16 @@ form.search-form .search-submit:hover {
     grid-row: 2;
   }
 }
+@media screen and (max-width: 768px) {
+  .wp-block-buttons > .wp-block-button.wp-block-button__width-25 {
+    width: calc(50% - var(--wp--style--block-gap, 0.5em) * 0.75);
+  }
+}
+@media screen and (max-width: 425px) {
+  .wp-block-buttons > .wp-block-button.has-custom-width {
+    width: 100%;
+  }
+}
 .wp-block-table td {
   border: 1px solid;
   padding: 5px;
@@ -2269,6 +2279,9 @@ footer .site-info .limit-width .social-media a i {
   padding: 0;
   height: 0;
   opacity: 0;
+}
+.site-header .top-bar.hidden .top-bar-inner {
+  pointer-events: none;
 }
 .site-header .top-bar a {
   color: var(--font-clr, white);
