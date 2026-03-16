@@ -34,7 +34,7 @@ $addressURL = get_field("address", "options")["url"] ?? '';
             <div class="email">
                 <a href="mailto:<?php echo get_field("email", "options"); ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-envelope" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
-                    <span><?php echo get_field("email", "options"); ?></span>
+                    <span>Email Us</span>
                 </a>
             </div>
             <?php endif; ?>

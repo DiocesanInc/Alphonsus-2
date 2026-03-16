@@ -10,6 +10,7 @@
   a {
     color: var(--font-clr, white);
     font-weight: 400;
+    display: flex;
   }
 
   .top-bar-inner {
@@ -23,17 +24,20 @@
       display: flex;
       span {
         margin-left: 1rem;
+        line-height: 1.5;
       }
     }
 
     .top-bar-left {
       gap: 15px;
       flex-direction: column;
-
       i {
         color: var(--icon-clr, white);
-        width: 18px;
-        text-align: center;
+        min-width: 18px;
+        text-align: center; 
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
     }
 
