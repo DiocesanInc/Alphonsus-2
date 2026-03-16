@@ -140,7 +140,7 @@ jQuery(function ($) {
   let newsSlidesLaptop = 2;
   let newsSlidesDesktop = 3;
 
-  if ($(".calendar-weekday-slick").parents(".homepage-section-cols").length) {
+  if ($(".calendar-inner").parents(".homepage-section-cols").length) {
     newsSlidesDesktop = 1;
     newsSlidesLaptop = 1;
   }

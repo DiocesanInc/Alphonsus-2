@@ -1,0 +1,53 @@
+#mobile-top-bar {
+  width: 100%;
+  color: white;
+  padding-block: 40px;
+
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+
+  a {
+    color: var(--font-clr, white);
+    font-weight: 400;
+  }
+
+  .top-bar-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+
+    .top-bar-left,
+    .top-bar-right {
+      display: flex;
+      span {
+        margin-left: 1rem;
+      }
+    }
+
+    .top-bar-left {
+      gap: 15px;
+      flex-direction: column;
+
+      i {
+        color: var(--icon-clr, white);
+        width: 18px;
+        text-align: center;
+      }
+    }
+
+    .top-bar-right {
+
+      i {
+        color: var(--icon-clr, white);
+      }
+
+      .social-media {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+  }
+}
