@@ -41,9 +41,13 @@ function the_breadcrumb($showCurrent = 1)
             if (get_post_type() != 'post') {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
-                $slug['slug'] = "ministry" ? "ministries" : $slug['slug'];
+                if ($slug['slug'] === "ministry"):
+                    $slug['slug'] = "ministries";
+                endif;
                 $postName = $post_type->labels->singular_name;
-                $postName = "Ministry" ? "Ministries" : $postName;
+                if ($postName === "Ministry"):
+                    $postName = "Ministries";
+                endif;
                 echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $postName . '</a>';
                 if ($showCurrent == 1) {
                     echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;

@@ -24,7 +24,8 @@
     <meta property="og:url" content="<?= esc_url(get_permalink()); ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?= wp_strip_all_tags(get_the_title()); ?>" />
-    <meta property="og:description" content="<?= wp_strip_all_tags(get_the_excerpt()); ?>" />
+    <?php $excerpt = get_the_excerpt();?>
+    <meta property="og:description" content="<?php echo ( ! empty( $excerpt ) ? wp_strip_all_tags( $excerpt ) : '' ); ?>" />
     <meta property="og:image:secure_url" content="<?= get_the_post_thumbnail_url(); ?>" />
     <meta property="og:image" content="<?= str_replace("https://", "http://", get_the_post_thumbnail_url()); ?>" />
 
