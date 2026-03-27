@@ -104,7 +104,12 @@ if (!function_exists("add_search_form")) {
             $search_mobile = ob_get_contents();
             ob_end_clean();
 
-            $items = $search_mobile . $items . $search_desktop;
+            ob_start();
+            get_template_part("template-parts/headers/top-bar-mobile");
+            $top_bar_mobile = ob_get_contents();
+            ob_end_clean();
+
+            $items = $search_mobile . $items . $search_desktop . $top_bar_mobile;
         }
         return $items;
     }

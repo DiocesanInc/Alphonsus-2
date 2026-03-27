@@ -1,50 +1,47 @@
-.top-bar {
-  background-color: var(--bg-clr, black);
+#mobile-top-bar {
   width: 100%;
   color: white;
-  padding-block: 10px;
-  display: none;
-  transition: all 0.4s ease;
+  padding-block: 40px;
 
   @media screen and (min-width: $desktop) {
-    display: block;
-  }
-
-  &.hidden {
-    padding: 0;
-    height: 0;
-    opacity: 0;
-    .top-bar-inner {
-      pointer-events: none;
-    }
+    display: none;
   }
 
   a {
     color: var(--font-clr, white);
+    font-weight: 400;
+    display: flex;
   }
 
   .top-bar-inner {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
+    gap: 40px;
 
     .top-bar-left,
     .top-bar-right {
       display: flex;
-      flex-direction: row;
+      span {
+        margin-left: 1rem;
+        line-height: 1.5;
+      }
     }
 
     .top-bar-left {
-      gap: 40px;
-
+      gap: 15px;
+      flex-direction: column;
       i {
         color: var(--icon-clr, white);
+        min-width: 18px;
+        text-align: center; 
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
     }
 
     .top-bar-right {
-      gap: 40px;
 
       i {
         color: var(--icon-clr, white);

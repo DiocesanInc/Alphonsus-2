@@ -73,6 +73,17 @@
     }
 }
 
+@media screen and (max-width: $tablet){
+    .wp-block-buttons > .wp-block-button.wp-block-button__width-25 {
+        width: calc(50% - var(--wp--style--block-gap, .5em)*.75);
+    }
+}
+@media screen and (max-width: $phone){
+    .wp-block-buttons > .wp-block-button.has-custom-width {
+        width: 100%;
+    }
+}
+
 .wp-block-table td {
     border: 1px solid;
     padding: 5px;

@@ -189,6 +189,7 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
     #<?php echo "$id .accordion-content p";
 
         ?> {
+        color: <?php echo $contentFontColor ?>;
         margin-bottom: 1.5em;
     }
 </style>

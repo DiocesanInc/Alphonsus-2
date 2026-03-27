@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.7.4
+Version: 1.7.6.3
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -932,6 +932,11 @@ textarea {
     var(--max-logo-height, 72px) + var(--top-bar-height, 0px) +
       var(--header-extra-height, 25px)
   );
+}
+:root:has(#header-top-bar.hidden) {
+  --top-bar-height: 0px;
+}
+:root {
   --hero-height: 60vh;
   --page-header-height: 30vh;
   --grey: #efefef;
@@ -947,9 +952,6 @@ textarea {
   --tr-opacity: opacity var(--animation-speed) ease;
   --content-inset: 0px;
   --homepage-section-spacing: 40px;
-}
-:root:has(#header-top-bar.hidden) {
-  --top-bar-height: 0px;
 }
 @media screen and (min-width: 992px) {
   :root {
@@ -1555,6 +1557,16 @@ form.search-form .search-submit:hover {
     grid-row: 2;
   }
 }
+@media screen and (max-width: 768px) {
+  .wp-block-buttons > .wp-block-button.wp-block-button__width-25 {
+    width: calc(50% - var(--wp--style--block-gap, 0.5em) * 0.75);
+  }
+}
+@media screen and (max-width: 425px) {
+  .wp-block-buttons > .wp-block-button.has-custom-width {
+    width: 100%;
+  }
+}
 .wp-block-table td {
   border: 1px solid;
   padding: 5px;
@@ -2086,9 +2098,6 @@ form .gform_body textarea:focus-visible {
     opacity: 0.5;
   }
 }
-footer {
-  --num-cols: 1;
-}
 footer .quicklinks-container #footer-quicklinks {
   padding: 0;
   margin: 0 0 0 20px;
@@ -2149,6 +2158,9 @@ footer .footer-contact-inner .email {
   flex-direction: row;
   align-items: center;
   gap: 15px;
+}
+footer {
+  --num-cols: 1;
 }
 footer .footer-wrapper {
   display: grid;
@@ -2268,6 +2280,9 @@ footer .site-info .limit-width .social-media a i {
   height: 0;
   opacity: 0;
 }
+.site-header .top-bar.hidden .top-bar-inner {
+  pointer-events: none;
+}
 .site-header .top-bar a {
   color: var(--font-clr, white);
 }
@@ -2295,6 +2310,56 @@ footer .site-info .limit-width .social-media a i {
   color: var(--icon-clr, white);
 }
 .site-header .top-bar .top-bar-inner .top-bar-right .social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.site-header #mobile-top-bar {
+  width: 100%;
+  color: white;
+  padding-block: 40px;
+}
+@media screen and (min-width: 1280px) {
+  .site-header #mobile-top-bar {
+    display: none;
+  }
+}
+.site-header #mobile-top-bar a {
+  color: var(--font-clr, white);
+  font-weight: 400;
+  display: flex;
+}
+.site-header #mobile-top-bar .top-bar-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left,
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right {
+  display: flex;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left span,
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right span {
+  margin-left: 1rem;
+  line-height: 1.5;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left {
+  gap: 15px;
+  flex-direction: column;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left i {
+  color: var(--icon-clr, white);
+  min-width: 18px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right i {
+  color: var(--icon-clr, white);
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right .social-media {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -3530,12 +3595,17 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .parish-cluster {
   margin: 0px auto;
   position: relative;
-  /* Map Slider */
 }
 .parish-cluster .parish-scroll-title {
   font-size: clamp(36px, 4.5vw, 48px);
   margin-top: 0;
   text-align: center;
+  margin-bottom: 70px;
+}
+@media screen and (min-width: 992px) {
+  .parish-cluster .parish-scroll-title {
+    margin-bottom: 40px;
+  }
 }
 .parish-cluster.parishFlex {
   margin: 20px auto 0;
@@ -3589,6 +3659,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .parish-cluster.parishFlex .parishScroll .testimonials-carousel .testimonial.slick-active {
   opacity: 1;
+}
+.parish-cluster {
+  /* Map Slider */
 }
 .parish-cluster .parish-map-title {
   margin-left: 8%;
@@ -3729,9 +3802,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   }
 }
 @media screen and (min-width: 992px) {
-  .parish-cluster {
-    /* Map Slider */
-  }
   .parish-cluster.parishFlex {
     flex-direction: row;
   }
@@ -3744,6 +3814,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   .parish-cluster.parishFlex .parishScroll {
     margin: 0 0 0 20px;
     width: 50%;
+  }
+  .parish-cluster {
+    /* Map Slider */
   }
   .parish-cluster .parish-maps {
     display: flex;

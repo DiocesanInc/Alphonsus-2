@@ -18,14 +18,14 @@ $show_lang = get_field("show_language_selector", "options");
 $addressURL = get_field("address", "options")["url"] ?? '';
 ?>
 
-<div id="header-top-bar" class="top-bar" style="--bg-clr: <?php echo $bg_clr; ?>">
-    <div class="top-bar-inner limit-width-wide">
+<div id="mobile-top-bar" class="" style="--bg-clr: <?php echo $bg_clr; ?>">
+    <div class="top-bar-inner">
         <div class="top-bar-left">
             <?php if ($show_address) : ?>
             <div class="address">
                 <a target="_blank" href="<?php echo $addressURL; ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-location-dot" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
-                    <?php echo get_field("address", "options")["title"]; ?>
+                    <span><?php echo get_field("address", "options")["title"]; ?></span>
                 </a>
             </div>
             <?php endif; ?>
@@ -34,7 +34,7 @@ $addressURL = get_field("address", "options")["url"] ?? '';
             <div class="email">
                 <a href="mailto:<?php echo get_field("email", "options"); ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-envelope" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
-                    <?php echo get_field("email", "options"); ?>
+                    <span>Email Us</span>
                 </a>
             </div>
             <?php endif; ?>
@@ -43,7 +43,7 @@ $addressURL = get_field("address", "options")["url"] ?? '';
             <div class="phone">
                 <a href="tel:<?php echo get_field("phone", "options"); ?>" style="--font-clr: <?php echo $font_clr; ?>">
                     <i class="fa-solid fa-mobile-screen-button" style="--icon-clr: <?php echo $icon_clr; ?>"></i>
-                    <?php echo get_field("phone", "options"); ?>
+                    <span><?php echo get_field("phone", "options"); ?></span>
                 </a>
             </div>
             <?php endif; ?>
