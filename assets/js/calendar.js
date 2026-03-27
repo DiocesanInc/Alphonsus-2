@@ -1,8 +1,9 @@
 jQuery(function ($) {
   /**
    * Simple Calendar (list view) skips days with no events.
-   * This script reconstructs missing days (based on dates found in each day's <dd>)
-   * and inserts placeholder days with "No Events", then proceeds with your Slick setup.
+   * This script reconstructs missing days by resolving real dates from the day labels,
+   * using event text only as a month/year anchor when it matches the rendered day.
+   * It then inserts placeholder days with "No Events" and proceeds with your Slick setup.
    *
    * Settings for Simple Calendar Plugin:
    * Calendar View: List
@@ -30,6 +31,12 @@ jQuery(function ($) {
   function addDays(d, days) {
     const x = new Date(d);
     x.setDate(x.getDate() + days);
+    return x;
+  }
+
+  function startOfDay(d) {
+    const x = new Date(d);
+    x.setHours(0, 0, 0, 0);
     return x;
   }
 
@@ -107,8 +114,126 @@ jQuery(function ($) {
     return new Date(currentYearGuess, monthIndex, day);
   }
 
+  function getDayNumberFromLabel($dt) {
+    const text = $dt.find(".simcal-date-format").first().text().trim();
+    const match = text.match(/\b(\d{1,2})\b/);
+    if (!match) return null;
+
+    const day = parseInt(match[1], 10);
+    return day >= 1 && day <= 31 ? day : null;
+  }
+
+  function nextOccurrenceOfDay(afterDate, dayNumber) {
+    let cursor = startOfDay(addDays(afterDate, 1));
+    let safety = 370;
+
+    while (safety > 0) {
+      if (cursor.getDate() === dayNumber) return cursor;
+      cursor = addDays(cursor, 1);
+      safety--;
+    }
+
+    return null;
+  }
+
+  function previousOccurrenceOfDay(beforeDate, dayNumber) {
+    let cursor = startOfDay(addDays(beforeDate, -1));
+    let safety = 370;
+
+    while (safety > 0) {
+      if (cursor.getDate() === dayNumber) return cursor;
+      cursor = addDays(cursor, -1);
+      safety--;
+    }
+
+    return null;
+  }
+
+  function resolveCalendarDates($dts) {
+    const yearGuess = new Date().getFullYear();
+    const today = startOfDay(new Date());
+    const records = [];
+
+    $dts.each(function () {
+      const $dt = $(this);
+      const $dd = $dt.next("dd.simcal-day");
+      if (!$dd.length) return;
+
+      const dayNumber = getDayNumberFromLabel($dt);
+      if (!dayNumber) return;
+
+      const parsedDate = parseDateFromDayDd($dd, yearGuess);
+      const isTrustedAnchor =
+        parsedDate && startOfDay(parsedDate).getDate() === dayNumber;
+
+      records.push({
+        $dt,
+        $dd,
+        dayNumber,
+        date: isTrustedAnchor ? startOfDay(parsedDate) : null,
+      });
+    });
+
+    if (!records.length) return records;
+
+    let firstKnownIndex = records.findIndex((record) => record.date);
+
+    if (firstKnownIndex === -1) {
+      const todayIndex = records.findIndex(
+        (record) => record.dayNumber === today.getDate(),
+      );
+
+      if (todayIndex !== -1) {
+        records[todayIndex].date = startOfDay(today);
+        firstKnownIndex = todayIndex;
+      } else {
+        let fallback = startOfDay(
+          new Date(today.getFullYear(), today.getMonth(), records[0].dayNumber),
+        );
+
+        while (fallback < today) {
+          fallback = startOfDay(
+            new Date(
+              fallback.getFullYear(),
+              fallback.getMonth() + 1,
+              records[0].dayNumber,
+            ),
+          );
+        }
+
+        records[0].date = fallback;
+        firstKnownIndex = 0;
+      }
+    }
+
+    for (let i = firstKnownIndex - 1; i >= 0; i--) {
+      records[i].date = previousOccurrenceOfDay(
+        records[i + 1].date,
+        records[i].dayNumber,
+      );
+    }
+
+    for (let i = firstKnownIndex + 1; i < records.length; i++) {
+      const expectedDate = nextOccurrenceOfDay(
+        records[i - 1].date,
+        records[i].dayNumber,
+      );
+
+      if (!records[i].date) {
+        records[i].date = expectedDate;
+        continue;
+      }
+
+      if (records[i].date <= records[i - 1].date) {
+        records[i].date = expectedDate;
+      }
+    }
+
+    return records.filter((record) => record.date);
+  }
+
   /**
-   * Fill gaps between existing dt/dd pairs by reading the real date from each dd.
+   * Fill gaps between existing dt/dd pairs after resolving the actual date for each day.
    * Inserts missing dt/dd pairs with a "No Events" placeholder.
    *
    * IMPORTANT: This runs BEFORE we assign data-simcal indices and before we move
@@ -119,20 +244,14 @@ jQuery(function ($) {
     const $dts = $inner.find("dt.simcal-day-label");
     if (!$dts.length) return;
 
-    const yearGuess = new Date().getFullYear();
+    // Resolve each day from its label order first.
+    // The event body can be misleading for expanded multi-day events because it
+    // often repeats the original event date instead of the rendered calendar day.
+    const records = resolveCalendarDates($dts);
+    if (!records.length) return;
 
-    // Build ordered records of existing days with parsed real dates
-    const records = [];
-    $dts.each(function () {
-      const $dt = $(this);
-      const $dd = $dt.next("dd.simcal-day");
-      if (!$dd.length) return;
-
-      const realDate = parseDateFromDayDd($dd, yearGuess);
-      if (!realDate) return;
-
-      $dt.attr("data-iso", toISO(realDate));
-      records.push({ $dt, $dd, date: realDate });
+    records.forEach(({ $dt, date }) => {
+      $dt.attr("data-iso", toISO(date));
     });
 
     // If we only have ONE event day, generate the full month around it
