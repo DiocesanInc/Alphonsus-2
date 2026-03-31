@@ -95,5 +95,6 @@ if (acfIsInstalled()) {
         load_acf_file("post_category");
         load_acf_file("header-settings");
         load_acf_file("footer-settings");
+        load_acf_file("single-ministry");
     }
 }
