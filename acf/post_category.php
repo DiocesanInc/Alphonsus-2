@@ -33,6 +33,33 @@ acf_add_local_field_group(array(
             'ajax' => 0,
             'placeholder' => '',
         ),
+        array(
+            'key' => 'field_69cbf0cdee165',
+            'label' => 'Header Image',
+            'name' => 'header_image',
+            'aria-label' => '',
+            'type' => 'image',
+            'instructions' => '*Set an image for the page header if you want it to be different from the site\'s default featured image',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+            'allow_in_bindings' => 0,
+            'preview_size' => 'medium',
+        ),
+
     ),
     'location' => array(
         array(
