@@ -34,7 +34,9 @@ foreach ($staffGroups as $staffGroup) {
 
 ksort($staff, SORT_NUMERIC);
 
-get_template_part("/template-parts/headers/page-header", null, array("headline" => "Meet Our Team", "headerImg" => getDefaultFeaturedImage(true)));
+$headerImg = get_field("staff_archive_header_image", "option") ? get_field("staff_archive_header_image", "option")["url"] : getDefaultFeaturedImage(true);
+
+get_template_part("/template-parts/headers/page-header", null, array("headline" => "Meet Our Team", "headerImg" => $headerImg));
 
 foreach ($staff as $order => $group) : ?>
 

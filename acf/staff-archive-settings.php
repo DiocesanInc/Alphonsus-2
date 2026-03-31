@@ -1,0 +1,83 @@
+<?php
+
+acf_add_local_field_group(array(
+    'key' => 'group_69cbfe51216d6',
+    'title' => 'Staff Archive Settings',
+    'fields' => array(
+        array(
+            'key' => 'field_69cbfe558c6cb',
+            'label' => 'Archive Header Image',
+            'name' => 'staff_archive_header_image',
+            'aria-label' => '',
+            'type' => 'image',
+            'instructions' => '*Choose an image for the page header of the staff archive if you want it to be different from the default featured image',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+            'allow_in_bindings' => 0,
+            'preview_size' => 'medium',
+        ),
+        array(
+            'key' => 'field_69cbfeba8c6cc',
+            'label' => 'Hide Staff Photos',
+            'name' => 'hide_staff_photos',
+            'aria-label' => '',
+            'type' => 'true_false',
+            'instructions' => '*Show or hide the staff photos',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+            'allow_in_bindings' => 0,
+            'ui_on_text' => 'Hide',
+            'ui_off_text' => 'Show',
+            'ui' => 1,
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'staff-archive-settings',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    'show_in_rest' => 0,
+    'display_title' => '',
+));
+
+acf_add_options_page(array(
+    'page_title' => 'Staff Archive Settings',
+    'menu_slug' => 'staff-archive-settings',
+    'parent_slug' => 'edit.php?post_type=staff',
+    'menu_title' => 'Settings',
+    'position' => '',
+    'redirect' => false,
+));
