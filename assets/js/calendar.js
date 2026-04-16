@@ -551,6 +551,183 @@ jQuery(function ($) {
     ],
   });
 
+  function getEventCalendarIds(className) {
+    const matches =
+      String(className || "").match(/simcal-events-calendar-(\d+)/g) || [];
+
+    return matches.map((match) => match.replace("simcal-events-calendar-", ""));
+  }
+
+  function getActiveCalendarIds($container) {
+    return $container
+      .find(".calendar-filter__input:checked")
+      .map(function () {
+        return String($(this).val());
+      })
+      .get();
+  }
+
+  function eventMatchesActiveCalendars(className, activeCalendarSet) {
+    const eventCalendarIds = getEventCalendarIds(className);
+
+    return (
+      !eventCalendarIds.length ||
+      eventCalendarIds.some((calendarId) => activeCalendarSet.has(calendarId))
+    );
+  }
+
+  function getFilterEmptyStateMarkup(message) {
+    return $(`
+      <li class="simcal-event simcal-no-events simcal-filter-empty-state">
+        <div class="simcal-event-details">
+          <div class="event-item">
+            <div class="event-title">${message}</div>
+          </div>
+        </div>
+      </li>
+    `);
+  }
+
+  function getPopupEmptyStateMarkup(message) {
+    return $(`
+      <div class="simcal-filter-empty-message">${message}</div>
+    `);
+  }
+
+  function applyListCalendarFilters($container) {
+    const activeCalendarIds = getActiveCalendarIds($container);
+    const activeCalendarSet = new Set(activeCalendarIds);
+    const emptyMessage = activeCalendarIds.length
+      ? "No matching events"
+      : "No calendars selected";
+
+    $container.find(".calendar-event-slick ul.simcal-events").each(function () {
+      const $list = $(this);
+      const $realEvents = $list
+        .children("li.simcal-event")
+        .not(".simcal-no-events, .simcal-filter-empty-state");
+      const $nativeEmptyState = $list
+        .children("li.simcal-no-events")
+        .not(".simcal-filter-empty-state");
+      let $generatedEmptyState = $list.children(".simcal-filter-empty-state");
+
+      if (!$generatedEmptyState.length) {
+        $generatedEmptyState = getFilterEmptyStateMarkup(emptyMessage).appendTo(
+          $list,
+        );
+      }
+
+      $generatedEmptyState.find(".event-title").text(emptyMessage);
+
+      $realEvents.each(function () {
+        $(this).toggleClass(
+          "simcal-filter-hidden",
+          !eventMatchesActiveCalendars(this.className, activeCalendarSet),
+        );
+      });
+
+      const visibleRealEvents = $realEvents.not(".simcal-filter-hidden").length;
+      const hasRealEvents = $realEvents.length > 0;
+      const showGeneratedEmptyState =
+        activeCalendarIds.length === 0 ||
+        (hasRealEvents && visibleRealEvents === 0);
+      const showNativeEmptyState =
+        activeCalendarIds.length > 0 && !hasRealEvents;
+
+      $nativeEmptyState.toggleClass(
+        "simcal-filter-hidden",
+        !showNativeEmptyState,
+      );
+      $generatedEmptyState.toggleClass(
+        "simcal-filter-hidden",
+        !showGeneratedEmptyState,
+      );
+    });
+  }
+
+  function applyGridPopupCalendarFilters($container, activeCalendarSet) {
+    const activeCalendarIds = Array.from(activeCalendarSet);
+    const emptyMessage = activeCalendarIds.length
+      ? "No matching events"
+      : "No calendars selected";
+
+    $(".qtip.simcal-event-bubble").each(function () {
+      const $popup = $(this);
+      const $events = $popup.find(".simcal-event");
+      if (!$events.length) return;
+
+      $events.each(function () {
+        $(this).toggleClass(
+          "simcal-filter-hidden",
+          !eventMatchesActiveCalendars(this.className, activeCalendarSet),
+        );
+      });
+
+      const $content = $popup.find(".qtip-content").first().length
+        ? $popup.find(".qtip-content").first()
+        : $popup;
+      let $emptyState = $content.find(".simcal-filter-empty-message");
+
+      if (!$emptyState.length) {
+        $emptyState = getPopupEmptyStateMarkup(emptyMessage).appendTo($content);
+      }
+
+      $emptyState.text(emptyMessage);
+      $emptyState.toggleClass(
+        "simcal-filter-hidden",
+        $events.not(".simcal-filter-hidden").length > 0,
+      );
+    });
+  }
+
+  function applyGridCalendarFilters($container) {
+    const activeCalendarIds = getActiveCalendarIds($container);
+    const activeCalendarSet = new Set(activeCalendarIds);
+    const $grid = $container.find(".simcal-default-calendar-grid");
+
+    if (!$grid.length) return;
+
+    $grid.find(".simcal-event").each(function () {
+      $(this).toggleClass(
+        "simcal-filter-hidden",
+        !eventMatchesActiveCalendars(this.className, activeCalendarSet),
+      );
+    });
+
+    $grid.find("td, .simcal-day").each(function () {
+      const $day = $(this);
+      const $dayEvents = $day.find(".simcal-event");
+
+      if (!$dayEvents.length) return;
+
+      const visibleEvents = $dayEvents.not(".simcal-filter-hidden").length;
+      const $dots = $day.find(".simcal-events-dots").first();
+
+      $day.toggleClass("simcal-filter-day-empty", visibleEvents === 0);
+
+      if ($dots.length) {
+        $dots.toggleClass("simcal-filter-hidden", visibleEvents === 0);
+      }
+    });
+
+    applyGridPopupCalendarFilters($container, activeCalendarSet);
+  }
+
+  $("[data-simcal-filter-root]").each(function () {
+    const $container = $(this);
+    const $filters = $container.find(".calendar-filter__input");
+
+    if (!$filters.length) return;
+
+    const syncCalendarFilters = function () {
+      applyListCalendarFilters($container);
+      applyGridCalendarFilters($container);
+    };
+
+    $filters.on("change", syncCalendarFilters);
+    syncCalendarFilters();
+  });
+
   // -----------------------------
   // 7) Close button on mobile full calendar popups (qTips)
   // -----------------------------
@@ -577,6 +754,23 @@ jQuery(function ($) {
                 node.classList.remove("qtip-focus");
               });
               node.appendChild(closeButton);
+
+              $("[data-simcal-filter-root]").each(function () {
+                const $container = $(this);
+                const $filters = $container.find(".calendar-filter__input");
+
+                if (
+                  !$filters.length ||
+                  !$container.find(".simcal-default-calendar-grid").length
+                ) {
+                  return;
+                }
+
+                applyGridPopupCalendarFilters(
+                  $container,
+                  new Set(getActiveCalendarIds($container)),
+                );
+              });
             }
           });
         }

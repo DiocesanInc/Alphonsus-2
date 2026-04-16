@@ -3270,7 +3270,6 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event,
 .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event {
   margin: 0;
-  padding: 30px 0;
   text-align: left;
   border-bottom: 1px solid var(--clr-quaternary);
 }
@@ -3278,17 +3277,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event > .simcal-event-title {
   display: none;
 }
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event + .simcal-event,
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event + .simcal-event {
-  margin-top: 10px;
-}
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .simcal-event-details,
-.calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .simcal-event-details {
-  max-width: 90%;
-  margin-inline: auto;
-}
 .calendar-container .calendar-event-slick dd.simcal-day .simcal-events.simcal-visible .simcal-event .event-date-wrapper,
 .calendar-container .calendar-event-slick dd.simcal-day .simcal-events-toggle.simcal-visible .simcal-event .event-date-wrapper {
+  margin-top: 1rem;
   color: var(--clr-font);
   font-weight: bold;
   font-size: 22px;
@@ -3323,6 +3314,116 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .calendar-container .view-all-link-wrapper {
   margin-top: 30px;
+}
+
+.calendar-container .calendar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 90%;
+}
+
+.calendar-container .calendar-filter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.calendar-container .calendar-filter__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--clr-font);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.calendar-container .calendar-filter__input {
+  accent-color: var(--clr-primary);
+  cursor: pointer;
+  margin: 0;
+}
+
+.calendar-container .calendar-filter__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--calendar-color, var(--clr-primary));
+  flex: 0 0 auto;
+}
+
+.calendar-container .simcal-filter-hidden {
+  display: none !important;
+}
+
+.simcal-default-calendar-list.calendar-event-slick {
+  padding: 0;
+}
+
+.calendar-full-container {
+  margin-block: 2rem var(--homepage-section-spacing);
+}
+
+.calendar-full-container .calendar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin: 0 auto 2rem;
+  max-width: 90%;
+}
+
+.calendar-full-container .calendar-filter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.calendar-full-container .calendar-filter__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--clr-font);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.calendar-full-container .calendar-filter__input {
+  accent-color: var(--clr-primary);
+  cursor: pointer;
+  margin: 0;
+}
+
+.calendar-full-container .calendar-filter__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--calendar-color, var(--clr-primary));
+  flex: 0 0 auto;
+}
+
+.calendar-full-container .simcal-filter-hidden,
+.qtip.simcal-event-bubble .simcal-filter-hidden {
+  display: none !important;
+}
+
+.calendar-full-container .simcal-filter-day-empty .simcal-events-dots {
+  display: none !important;
+}
+
+.calendar-full-container .simcal-filter-empty-message {
+  color: var(--clr-font);
+  margin-top: 1rem;
+}
+
+.simcal-default-calendar-grid .simcal-events > .simcal-event {
+  font-size: inherit;
+}
+
+.simcal-event-bubble .simcal-event {
+  border-bottom: 1px solid var(--clr-quaternary);
 }
 
 .news-container {

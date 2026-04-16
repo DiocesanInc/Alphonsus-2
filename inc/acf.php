@@ -90,6 +90,7 @@ if (acfIsInstalled()) {
 
     if (acfIsInstalled()) {
         load_acf_file("homepage");
+        load_acf_file("page-calendar");
         load_acf_file("template-settings");
         load_acf_file("ministry-groups");
         load_acf_file("post_category");
@@ -97,5 +98,6 @@ if (acfIsInstalled()) {
         load_acf_file("footer-settings");
         load_acf_file("single-ministry");
         load_acf_file("staff-archive-settings");
+        load_acf_file("theme-colors");
     }
 }

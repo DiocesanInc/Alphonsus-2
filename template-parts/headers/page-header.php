@@ -12,7 +12,7 @@ if (array_key_exists("headerImg", $args) && $args["headerImg"] && $args["headerI
     $headerImg = $args["headerImg"];
 } else {
     if (has_post_thumbnail()) {
-        $headerImg = get_the_post_thumbnail_url(null, "large");
+        $headerImg = get_the_post_thumbnail_url(null, "full");
     } else {
         $headerImg = getDefaultFeaturedImage(true) ? getDefaultFeaturedImage(true) : get_stylesheet_directory_uri() . "/assets/img/alphonsus_placeholder.png";
     }
@@ -25,9 +25,11 @@ $headline = array_key_exists("headline", $args) && $args["headline"] ? $args["he
     <div class="entry-title-wrapper">
         <h1 class="entry-title has-text-decoration">
             <?php if (is_tax()) {
-                    $headline = preg_replace("/^([\w ]+)Group:\s+/i", "", get_the_archive_title());
-                    echo $headline;
-                } else { echo $headline; } ?>
+                $headline = preg_replace("/^([\w ]+)Group:\s+/i", "", get_the_archive_title());
+                echo $headline;
+            } else {
+                echo $headline;
+            } ?>
         </h1>
         <?php the_breadcrumb(); ?>
     </div>
