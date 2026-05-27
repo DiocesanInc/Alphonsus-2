@@ -8,7 +8,10 @@ body:not(.page-template-page-landing) .content-area {
 }
 
 body.admin-bar #masthead {
-  margin-top: 32px;
+  margin-top: 46px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 32px;
+  }
 }
 img {
   border-radius: 10px;

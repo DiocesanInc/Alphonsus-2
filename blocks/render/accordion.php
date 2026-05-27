@@ -118,7 +118,7 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
         left: 50%;
         transition: transform .4s ease;
         position: absolute;
-        color: var(--clr-quaternary);
+        color: <?php echo $headingFontColor; ?>;
     }
 
     #<?php echo "$id .accordion-section-title:hover .accordion-toggle .fa-plus";

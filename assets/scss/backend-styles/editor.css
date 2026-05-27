@@ -12,15 +12,13 @@ body .editor-styles-wrapper .wp-block-button__link {
   --padding: 0.875em 2.5em;
   --font-size: 16px;
 
-  background: var(--primary-button-background-color, var(--clr-quaternary));
-  color: var(--primary-button-font-color, white);
   padding: var(--padding);
   line-height: 1;
   text-decoration: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--primary-button-border-color, var(--clr-quaternary));
+  /* border: 1px solid var(--primary-button-border-color, var(--clr-quaternary)); */
   border-radius: 5px;
   transition: var(--tr-background), var(--tr-transform), var(--tr-color);
   font-size: var(--font-size);
@@ -29,15 +27,65 @@ body .editor-styles-wrapper .wp-block-button__link {
   position: relative;
   font-family: var(--font-main);
 }
+body .editor-styles-wrapper .wp-block-button__link:not(.has-text-color) {
+  color: var(--primary-button-font-color, white);
+}
+body .editor-styles-wrapper .wp-block-button__link:not(.has-background) {
+  background: var(--primary-button-background-color, var(--clr-quaternary));
+  border: 1px solid var(--primary-button-border-color, var(--clr-quaternary));
+}
 
 body .editor-styles-wrapper .wp-block-button__link:hover,
-body .editor-styles-wrapper .wp-block-button__link:focus {
+body .editor-styles-wrapper .wp-block-button__link:focus,
+body .editor-styles-wrapper .wp-block-button__link:active {
   text-decoration: none;
-  background: var(--primary-button-background-color-hover, white);
-  color: var(--primary-button-font-color-hover, var(--clr-quaternary));
-  border: 1px solid var(--primary-button-border-color, var(--clr-quaternary));
+  /* border: 1px solid var(--primary-button-border-color, var(--clr-quaternary)); */
   font-weight: bold;
 }
+body .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):hover,
+body .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):focus,
+body .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):active {
+  color: var(--primary-button-font-color-hover, var(--clr-quaternary));
+}
+body .editor-styles-wrapper .wp-block-button__link:not(.has-background):hover,
+body .editor-styles-wrapper .wp-block-button__link:not(.has-background):focus,
+body .editor-styles-wrapper .wp-block-button__link:not(.has-background):active {
+  background: var(--primary-button-background-color-hover, white);
+  border: 1px solid var(--primary-button-border-color, var(--clr-quaternary));
+}
+
+
+body .editor-styles-wrapper .wp-block-button__link.has-white-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-white-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-white-color:active {
+  background: white !important;
+}
+body .editor-styles-wrapper .wp-block-button__link.has-black-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-black-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-black-color:active {
+  background: black !important;
+}
+body .editor-styles-wrapper .wp-block-button__link.has-primary-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-primary-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-primary-color:active {
+  background: var(--clr-primary) !important;
+}
+body .editor-styles-wrapper .wp-block-button__link.has-secondary-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-secondary-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-secondary-color:active {
+  background: var(--clr-secondary) !important;
+}
+body .editor-styles-wrapper .wp-block-button__link.has-tertiary-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-tertiary-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-tertiary-color:active {
+  background: var(--clr-tertiary) !important;
+}
+body .editor-styles-wrapper .wp-block-button__link.has-quaternary-color:hover,
+body .editor-styles-wrapper .wp-block-button__link.has-quaternary-color:focus,
+body .editor-styles-wrapper .wp-block-button__link.has-quaternary-color:active {
+  background: var(--clr-quaternary) !important;
+}
+
 .wp-block-cover {
   --primary-button-background-color: transparent;
   --primary-button-font-color: white;

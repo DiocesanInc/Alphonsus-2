@@ -18,6 +18,7 @@ if (!function_exists('acf_init_blocks')) {
                 'accordion',
                 'image-banner',
                 'image-button',
+                'staff-group',
             ];
 
             foreach ($blocks as $block) {

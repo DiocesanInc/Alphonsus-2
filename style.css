@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.8
+Version: 1.8.1
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -1422,6 +1422,30 @@ body:not(.home) .limit-width.footer-wrapper {
   background: black !important;
   color: white;
 }
+.the-button.has-primary-background-color:not(:hover),
+.wp-block-button__link.the-button.has-primary-background-color:not(:hover) {
+  background: var(--clr-primary);
+}
+.the-button.has-secondary-background-color:not(:hover),
+.wp-block-button__link.the-button.has-secondary-background-color:not(:hover) {
+  background: var(--clr-secondary);
+}
+.the-button.has-tertiary-background-color:not(:hover),
+.wp-block-button__link.the-button.has-tertiary-background-color:not(:hover) {
+  background: var(--clr-tertiary);
+}
+.the-button.has-quaternary-background-color:not(:hover),
+.wp-block-button__link.the-button.has-quaternary-background-color:not(:hover) {
+  background: var(--clr-quaternary);
+}
+.the-button.has-white-background-color:not(:hover),
+.wp-block-button__link.the-button.has-white-background-color:not(:hover) {
+  background: white;
+}
+.the-button.has-black-background-color:not(:hover),
+.wp-block-button__link.the-button.has-black-background-color:not(:hover) {
+  background: black;
+}
 
 .hero-info .the-button {
   --padding: 1.2em 2.77em;
@@ -1755,7 +1779,12 @@ body:not(.page-template-page-landing) .content-area {
 }
 
 body.admin-bar #masthead {
-  margin-top: 32px;
+  margin-top: 46px;
+}
+@media screen and (min-width: 768px) {
+  body.admin-bar #masthead {
+    margin-top: 32px;
+  }
 }
 
 img {
@@ -2328,6 +2357,7 @@ footer .site-info .limit-width .social-media a i {
   color: var(--font-clr, white);
   font-weight: 400;
   display: flex;
+  text-decoration: none;
 }
 .site-header #mobile-top-bar .top-bar-inner {
   display: flex;

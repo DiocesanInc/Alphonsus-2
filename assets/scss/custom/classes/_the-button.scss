@@ -101,6 +101,25 @@
     color: white;
   }
 
+  &.has-primary-background-color:not(:hover) {
+      background: var(--clr-primary);
+  }
+  &.has-secondary-background-color:not(:hover) {
+      background: var(--clr-secondary);
+  }
+  &.has-tertiary-background-color:not(:hover) {
+      background: var(--clr-tertiary);
+  }
+  &.has-quaternary-background-color:not(:hover) {
+      background: var(--clr-quaternary);
+  }
+  &.has-white-background-color:not(:hover) {
+      background: white;
+  }
+  &.has-black-background-color:not(:hover) {
+      background: black;
+  }
+
 }
 
 .hero-info .the-button {
