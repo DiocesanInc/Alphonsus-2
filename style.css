@@ -2521,6 +2521,7 @@ main .entry-header #crumbs a {
   justify-content: center;
 }
 .hero .hero-video {
+  vertical-align: bottom;
   margin-left: calc(50vw - var(--content-inset));
   transform: translateX(-50%);
   max-width: calc(100vw - var(--content-inset) * 2);
