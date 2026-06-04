@@ -8,7 +8,7 @@
   }
 
   a {
-    color: var(--font-clr, white);
+    color: var(--sidebar-top-level-default-font-color, var(--font-clr, white));
     font-weight: 400;
     display: flex;
     text-decoration: none;
@@ -35,7 +35,7 @@
       i {
         color: var(--icon-clr, white);
         min-width: 18px;
-        text-align: center; 
+        text-align: center;
         align-items: center;
         display: flex;
         justify-content: center;
@@ -43,7 +43,6 @@
     }
 
     .top-bar-right {
-
       i {
         color: var(--icon-clr, white);
       }
