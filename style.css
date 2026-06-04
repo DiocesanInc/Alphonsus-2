@@ -2386,6 +2386,10 @@ footer .site-info .limit-width .social-media a i {
   display: flex;
   justify-content: center;
 }
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left a:hover {
+  background: var(--sidebar-top-level-hover-bg-color, transparent);
+  color: var(--sidebar-top-level-hover-font-color, var(--color-white));
+}
 .site-header #mobile-top-bar .top-bar-inner .top-bar-right i {
   color: var(--icon-clr, white);
 }

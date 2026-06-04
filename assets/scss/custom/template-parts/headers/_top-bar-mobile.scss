@@ -23,6 +23,7 @@
     .top-bar-left,
     .top-bar-right {
       display: flex;
+
       span {
         margin-left: 1rem;
         line-height: 1.5;
@@ -32,6 +33,7 @@
     .top-bar-left {
       gap: 15px;
       flex-direction: column;
+
       i {
         color: var(--icon-clr, white);
         min-width: 18px;
@@ -39,6 +41,11 @@
         align-items: center;
         display: flex;
         justify-content: center;
+      }
+
+      a:hover {
+        background: var(--sidebar-top-level-hover-bg-color, transparent);
+        color: var(--sidebar-top-level-hover-font-color, var(--color-white));
       }
     }
 
