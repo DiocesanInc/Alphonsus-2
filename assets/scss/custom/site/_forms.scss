@@ -7,6 +7,8 @@ input[type="submit"] {
 
 form .gform_body {
   input[type="text"],
+  input[type="email"],
+  input[type="tel"],
   textarea {
     font-size: clamp(20px, 2vw, 23px) !important;
     padding: 15px 25px !important;

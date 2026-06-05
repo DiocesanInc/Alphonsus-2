@@ -17,7 +17,13 @@ $backLink = get_field("ministries", "options")["ministry_groups_back_button"];
 
 <div class="content-area" id="primary">
     <main class="site-main" id="main">
-        <?php get_template_part('template-parts/headers/page-header'); ?>
+        <?php $ministryGroup = get_queried_object();?>
+            <?php if ($ministryGroup->taxonomy === 'ministry-group'): 
+            $headerImg = get_field('ministry_group_image', $ministryGroup)['url'];
+            get_template_part('template-parts/headers/page-header', null, array('headerImg' => $headerImg)); ?>
+        <?php else: ?>
+            <?php get_template_part('template-parts/headers/page-header'); ?>
+        <?php endif;?>
 
 
         <?php if (have_posts()) : ?>

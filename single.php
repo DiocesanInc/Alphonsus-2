@@ -46,10 +46,9 @@ endif;
 
         elseif (get_post_type() === "ministry") :
 
-            $headerImg = get_field("ministry_page_header_image") ? get_field("ministry_page_header_image")["url"] : get_field("default_featured_image", "options");
+            $headerImg = get_field("ministry_page_header_image") ? get_field("ministry_page_header_image")["url"] : '';
 
             get_template_part('template-parts/headers/page-header', null, array("headerImg" => $headerImg, "headline" => get_the_title()));
-
 
         else :
 
