@@ -1833,6 +1833,8 @@ input[type=submit] {
 }
 
 form .gform_body input[type=text],
+form .gform_body input[type=email],
+form .gform_body input[type=tel],
 form .gform_body textarea {
   font-size: clamp(20px, 2vw, 23px) !important;
   padding: 15px 25px !important;
@@ -1843,15 +1845,21 @@ form .gform_body textarea {
   -webkit-appearance: none;
 }
 form .gform_body input[type=text]:hover,
+form .gform_body input[type=email]:hover,
+form .gform_body input[type=tel]:hover,
 form .gform_body textarea:hover {
   border-color: #111111 !important;
 }
 form .gform_body input[type=text]:focus-visible,
+form .gform_body input[type=email]:focus-visible,
+form .gform_body input[type=tel]:focus-visible,
 form .gform_body textarea:focus-visible {
   border-color: #111111 !important;
 }
 @media screen and (min-width: 992px) {
   form .gform_body input[type=text],
+  form .gform_body input[type=email],
+  form .gform_body input[type=tel],
   form .gform_body textarea {
     padding: 16px 30px !important;
   }
