@@ -4,8 +4,8 @@ if (!function_exists('get_grouped_calendars')) {
     /**
      * Returns calendar posts that are part of the grouped calendar UI.
      *
-     * If rendered calendar markup is provided, prefer calendars that are
-     * actually present in that markup and fall back to all grouped calendars.
+     * Rendered calendar markup may omit calendars that do not have events in
+     * the current view, so filters are based on the grouped calendar setting.
      *
      * @param string $calendar_markup
      * @return array<int, array<string, mixed>>
@@ -24,8 +24,6 @@ if (!function_exists('get_grouped_calendars')) {
         ]);
 
         $grouped_calendars = [];
-        $calendars_in_markup = [];
-
         foreach ($calendar_ids as $id) {
             if (!get_field('grouped_calendar', $id)) {
                 continue;
@@ -42,17 +40,6 @@ if (!function_exists('get_grouped_calendars')) {
             ];
 
             $grouped_calendars[] = $calendar;
-
-            if (
-                $calendar_markup
-                && strpos($calendar_markup, "simcal-events-calendar-$id") !== false
-            ) {
-                $calendars_in_markup[] = $calendar;
-            }
-        }
-
-        if ($calendar_markup !== '') {
-            return $calendars_in_markup;
         }
 
         return $grouped_calendars;
