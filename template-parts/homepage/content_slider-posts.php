@@ -36,7 +36,9 @@ else :
     $post_slides = get_field("content_slider_posts");
 endif;
 
-$slick = count($post_slides) > 1 ? true : false;
+$post_count = $post_slides ? count($post_slides) : 0;
+
+$slick = $post_count > 1 ? true : false;
 ?>
 
 <div class="content-slider-posts equal-height" data-is-slider="<?php echo $slick ? "true" : "false"; ?>" data-auto-posts="<?php echo $auto ? "true" : "false"; ?>">

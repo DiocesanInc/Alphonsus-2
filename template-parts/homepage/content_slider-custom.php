@@ -8,7 +8,8 @@
  * @package alphonsus
  */
 
-$slick = count(get_field("content_slider_items")) > 1 ? "true" : "false";
+$slide_count = get_field("content_slider_items") ? count(get_field("content_slider_items")) : 0;
+$slick = $slide_count > 1 ? "true" : "false";
 
 ?>
 
