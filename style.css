@@ -1384,7 +1384,6 @@ body:not(.home) .limit-width.footer-wrapper {
 .the-button.has-white-color,
 .wp-block-button__link.the-button.has-white-color {
   color: white;
-  border: 1px solid white;
 }
 .the-button.has-black-color,
 .wp-block-button__link.the-button.has-black-color {
@@ -1445,6 +1444,10 @@ body:not(.home) .limit-width.footer-wrapper {
 .the-button.has-black-background-color:not(:hover),
 .wp-block-button__link.the-button.has-black-background-color:not(:hover) {
   background: black;
+}
+
+.the-button.has-white-color:not(.wp-block-button__link) {
+  border: 1px solid white;
 }
 
 .hero-info .the-button {
@@ -2974,6 +2977,7 @@ main .entry-header #crumbs a {
   font-size: clamp(18px, 2vw, 24px);
   color: white;
   margin-bottom: 40px;
+  word-wrap: break-word;
 }
 .content-slider-container[data-alignment=left][data-style=has-overlay] .content-slider-post::before {
   right: auto;
@@ -3108,8 +3112,17 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   -o-object-fit: cover;
      object-fit: cover;
 }
+.mass-times-container .mass-times-left .mass-times-image-wrapper:nth-child(1) {
+  padding-left: 10%;
+}
 .mass-times-container .mass-times-left .mass-times-image-wrapper:nth-child(2) {
   margin-top: 50px;
+  padding-right: 10%;
+}
+@media screen and (min-width: 992px) {
+  .mass-times-container .mass-times-left .mass-times-image-wrapper {
+    padding: 0 !important;
+  }
 }
 .mass-times-container .mass-times-right {
   display: flex;
@@ -4209,7 +4222,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right {
   width: auto;
-  padding: 0px 50px 0;
+  padding: 0 50px 30px;
   display: block !important;
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right .mass-times-schedule {

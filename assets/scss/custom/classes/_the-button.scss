@@ -68,7 +68,6 @@
   }
   &.has-white-color {
       color: white;
-      border: 1px solid white;
   }
   &.has-black-color {
       color: black;
@@ -120,6 +119,10 @@
       background: black;
   }
 
+}
+
+.the-button.has-white-color:not(.wp-block-button__link) {
+    border: 1px solid white;
 }
 
 .hero-info .the-button {

@@ -55,8 +55,17 @@
       object-fit: cover;
     }
 
+    .mass-times-image-wrapper:nth-child(1) {
+      padding-left: 10%;
+    }
     .mass-times-image-wrapper:nth-child(2) {
       margin-top: 50px;
+      padding-right: 10%;
+    }
+    @media screen and (min-width: $laptop) {
+      .mass-times-image-wrapper {
+        padding: 0 !important;
+      }
     }
   }
 
