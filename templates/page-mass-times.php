@@ -14,9 +14,10 @@ get_header();
 
 $homepage_id = get_field("homepage_page_id", "options");
 $bg_img = get_field("mass_times_bg_img", $homepage_id);
-$bg_img_path = get_template_directory_uri() . "/assets/img/$bg_img.svg";
+$bg_img_path = $bg_img == 'select' ? get_field('watermark_upload', $homepage_id) : get_template_directory_uri() . "/assets/img/$bg_img.svg";
+$bg_op = get_field("watermark_opacity", $homepage_id) ?? '03';
 
-$bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
+$bg = $bg_img ? "style='background-image:url($bg_img_path); opacity:0.$bg_op;'" : "";
 
 ?>
 

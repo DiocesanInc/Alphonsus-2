@@ -37,10 +37,14 @@
   }
 
   .content-slider-post {
-    padding-block: 95px;
+    padding-block: 35px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media screen and (min-width: $phone) {
+      padding-block: 95px;
+    }
 
     .limit-width {
       max-width: var(--post-width);
