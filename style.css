@@ -4227,7 +4227,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right {
   width: auto;
-  padding: 0 50px 30px;
+  padding: 0 50px 30px !important;
   display: block !important;
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right .mass-times-schedule {
