@@ -29,7 +29,7 @@ $staffImage = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template
                 </div>
 
                 <?php if (get_the_content()) : ?>
-                    <a title="<?php the_title(); ?>" href="tel:<?php echo get_the_permalink(); ?>" class="">
+                    <a title="<?php the_title(); ?>" href="<?php echo get_the_permalink(); ?>" class="">
                         Bio
                     </a>
                 <?php endif; ?>
