@@ -12,7 +12,8 @@
   .staff-member-info {
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr .75fr;
+    // grid-template-rows: repeat(2, 1fr);
 
     .staff-member-title {
       margin-block: 0 10px;
@@ -35,11 +36,20 @@
       flex-direction: row;
       align-items: center;
       font-size: 16px;
-      padding-top: 10px;
-      gap: 20px;
+      // padding-top: 10px;
+      column-gap: 20px;
+      row-gap: 0;
+      flex-wrap: wrap;
 
       a {
         color: var(--clr-secondary);
+
+        &.the-button {
+          --padding: 0.875em 1.5em;
+          &:hover {
+            color: white;
+          }
+        }
 
         &:hover {
           text-decoration: none;

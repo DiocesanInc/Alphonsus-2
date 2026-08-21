@@ -815,7 +815,7 @@ function acf_parishes()
                                     ),
                                     'default_value' => '',
                                     'maxlength' => '',
-                                    'placeholder' => 'española',
+                                    'placeholder' => 'español',
                                     'prepend' => '',
                                     'append' => '',
                                     'parent_repeater' => 'field_65cbab546097z',
