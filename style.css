@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A modern revised version of Diocesan's Alphonsus Hybrid
-Version: 1.8.8
+Version: 1.9.0
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -2951,10 +2951,15 @@ main .entry-header #crumbs a {
   z-index: 1;
 }
 .content-slider-container .content-slider-post {
-  padding-block: 95px;
+  padding-block: 35px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+@media screen and (min-width: 425px) {
+  .content-slider-container .content-slider-post {
+    padding-block: 95px;
+  }
 }
 .content-slider-container .content-slider-post .limit-width {
   max-width: var(--post-width);
@@ -4222,7 +4227,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right {
   width: auto;
-  padding: 0 50px 30px;
+  padding: 0 50px 30px !important;
   display: block !important;
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-right .mass-times-schedule {
@@ -4597,7 +4602,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .staff-member .staff-member-info {
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr 0.75fr;
 }
 .staff-member .staff-member-info .staff-member-title {
   margin-block: 0 10px;
@@ -4618,11 +4623,19 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   flex-direction: row;
   align-items: center;
   font-size: 16px;
-  padding-top: 10px;
-  gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 0;
+  flex-wrap: wrap;
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a {
   color: var(--clr-secondary);
+}
+.staff-member .staff-member-info .staff-member-contact-wrapper a.the-button {
+  --padding: 0.875em 1.5em;
+}
+.staff-member .staff-member-info .staff-member-contact-wrapper a.the-button:hover {
+  color: white;
 }
 .staff-member .staff-member-info .staff-member-contact-wrapper a:hover {
   text-decoration: none;

@@ -11,7 +11,6 @@ function acf_mass_times()
             'type' => 'tab',
             'instructions' => '',
             'required' => 0,
-            // 'conditional_logic' => 0,
             'conditional_logic' => array(
                 array(
                     array(
@@ -125,7 +124,7 @@ function acf_mass_times()
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '25',
+                'width' => '20',
                 'class' => '',
                 'id' => '',
             ),
@@ -145,7 +144,7 @@ function acf_mass_times()
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '21',
+                'width' => '20',
                 'class' => '',
                 'id' => '',
             ),
@@ -180,7 +179,7 @@ function acf_mass_times()
                 ),
             ),
             'wrapper' => array(
-                'width' => '21',
+                'width' => '20',
                 'class' => '',
                 'id' => '',
             ),
@@ -189,6 +188,34 @@ function acf_mass_times()
             'min_size' => '',
             'max_size' => '',
             'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_65b9475c0ad1y',
+            'label' => 'Opacity',
+            'name' => 'watermark_opacity',
+            'aria-label' => '',
+            'type' => 'text',
+            'instructions' => 'Set opacity % of watermark (must be two digits, ex. 1% would be 01)',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_65dcfeed09c98',
+                        'operator' => '==',
+                        'value' => 'select',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '20',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'maxlength' => '2',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
         ),
         array(
             'key' => 'field_65b94794b4ef8',
@@ -208,7 +235,7 @@ function acf_mass_times()
                 ),
             ),
             'wrapper' => array(
-                'width' => '33',
+                'width' => '20',
                 'class' => '',
                 'id' => '',
             ),

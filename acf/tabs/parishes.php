@@ -53,17 +53,8 @@ function acf_parishes()
   			'instructions' => '*Max 25 Characters',
   			'required' => 0,
   			'conditional_logic' => 0,
-  			// 'conditional_logic' => array(
-  			// 	array(
-  			// 		array(
-  			// 			'field' => 'field_626c37cd602a4',
-  			// 			'operator' => '!=',
-  			// 			'value' => 'slider',
-  			// 		),
-  			// 	),
-  			// ),
   			'wrapper' => array(
-  				'width' => '50',
+  				'width' => '33',
   				'class' => '',
   				'id' => '',
   			),
@@ -455,6 +446,34 @@ function acf_parishes()
             'max_size' => '',
             'mime_types' => '',
         ),
+        array(
+            'key' => 'field_65b9475c0ad1x',
+            'label' => 'Opacity',
+            'name' => 'cluster_watermark_opacity',
+            'aria-label' => '',
+            'type' => 'text',
+            'instructions' => 'Set opacity % of watermark (must be two digits, ex. 1% would be 01)',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_65dcfeed09c9z',
+                        'operator' => '==',
+                        'value' => 'select',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '20',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'maxlength' => '2',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+        ),
 		array(
 			'key' => 'field_61a917aeb95ez',
 			'label' => 'Slider',
@@ -796,7 +815,7 @@ function acf_parishes()
                                     ),
                                     'default_value' => '',
                                     'maxlength' => '',
-                                    'placeholder' => 'española',
+                                    'placeholder' => 'español',
                                     'prepend' => '',
                                     'append' => '',
                                     'parent_repeater' => 'field_65cbab546097z',

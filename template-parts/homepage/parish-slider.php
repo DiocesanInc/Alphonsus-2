@@ -10,8 +10,9 @@
 
 $bg_img = get_field("cluster_mass_times_bg_img");
 $bg_img_path = $bg_img == 'select' ? get_field('cluster_watermark_upload') : get_template_directory_uri() . "/assets/img/$bg_img.svg";
+$bg_op = get_field("cluster_watermark_opacity") ?? '03';
 
-$bg = $bg_img ? "style='background-image:url($bg_img_path);'" : "";
+$bg = $bg_img ? "style='background-image:url($bg_img_path); opacity:0.$bg_op;'" : "";
 
 ?>
 

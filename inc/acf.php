@@ -99,5 +99,6 @@ if (acfIsInstalled()) {
         load_acf_file("single-ministry");
         load_acf_file("staff-archive-settings");
         load_acf_file("theme-colors");
+        load_acf_file("ministries-page");
     }
 }
