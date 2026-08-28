@@ -152,7 +152,7 @@ function acf_mass_times()
                 'dove' => 'Dove',
                 'lamb' => 'Lamb',
                 'hand' => 'Hand',
-                'select' => 'Select ->',
+                'select' => 'Custom ->',
             ),
             'default_value' => "dove",
             'return_format' => 'value',

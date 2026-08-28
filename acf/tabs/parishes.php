@@ -409,7 +409,7 @@ function acf_parishes()
                 'dove' => 'Dove',
                 'lamb' => 'Lamb',
                 'hand' => 'Hand',
-                'select' => 'Select ->',
+                'select' => 'Custom ->',
             ),
             'default_value' => "dove",
             'return_format' => 'value',
