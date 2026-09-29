@@ -28,6 +28,9 @@
     &.select {
       background-position: center center;
     }
+    &:not(.select) {
+      opacity: 0.03 !important;
+    }
   }
 
   @media screen and (min-width: $laptop) {
