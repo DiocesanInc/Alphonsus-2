@@ -30,7 +30,7 @@ if (!function_exists('acf_init_blocks')) {
     add_action("acf/init", "acf_init_blocks", 5);
 }
 
-function acf_block_render_callback($block)
+function acf_block_render_callback($block, $content = '', $is_preview = false)
 {
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")
     $slug = str_replace('acf/', '', $block['name']);

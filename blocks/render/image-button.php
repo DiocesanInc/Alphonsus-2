@@ -42,9 +42,12 @@ $opacity = 0.7;
 //     $opacity = 1;
 // }
 
+$tag = !empty($is_preview) ? 'div' : 'a';
+
+
 ?>
 
-<a href="<?php echo $url; ?>" class="button-link image-button-block<?php echo $align_class; ?>"
+<<?php echo $tag; ?> href="<?php echo $url; ?>" class="button-link image-button-block<?php echo $align_class; ?>"
     target="<?php echo $target; ?>" title="<?php echo $title; ?>" id="<?php echo $id; ?>">
     <div class="background-image" style="background-image: url(<?php echo $bkgd; ?>)">
 
@@ -52,104 +55,104 @@ $opacity = 0.7;
     <div class="button-title has-white-color">
         <?php echo $title; ?>
     </div>
-</a>
+</<?php echo $tag; ?>>
 
 <style type="text/css">
-#<?php echo "$id";
+    #<?php echo "$id";
 
-?> {
-    font-size: 30px;
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    /* float: left; */
-    align-items: center;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-decoration: none;
-    width: 100%;
-    height: 9.5em;
-    margin-bottom: 1.75rem;
-    box-shadow: 0 20px 25px #293d4729;
-    overflow: hidden;
-    border-radius: 10px;
-}
+        ?> {
+        font-size: 30px;
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        /* float: left; */
+        align-items: center;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-decoration: none;
+        width: 100%;
+        height: 9.5em;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 20px 25px #293d4729;
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-#<?php echo "$id *";
+    #<?php echo "$id *";
 
-?> {
-    z-index: 1;
-}
+        ?> {
+        z-index: 1;
+    }
 
-#<?php echo "$id .background-image";
+    #<?php echo "$id .background-image";
 
-?> {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: var(--tr-transform);
-}
+        ?> {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: var(--tr-transform);
+    }
 
-#<?php echo "$id .background-image::after";
+    #<?php echo "$id .background-image::after";
 
-?> {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: <?php echo $opacity ?>;
-    transition: opacity 0.25s ease-in;
-    background: <?php echo $bgClr ?>;
-}
+        ?> {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: <?php echo $opacity ?>;
+        transition: opacity 0.25s ease-in;
+        background: <?php echo $bgClr ?>;
+    }
 
-#<?php echo "$id .background-image::before";
+    #<?php echo "$id .background-image::before";
 
-?> {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.25s ease-in;
-    background: white;
-}
+        ?> {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+        background: white;
+    }
 
-#<?php echo "$id .button-title";
+    #<?php echo "$id .button-title";
 
-?> {
-    padding: 0 0.25rem;
-    position: absolute;
-    font-family: var(--font-heading);
-    font-size: inherit;
-    text-align: center;
-}
+        ?> {
+        padding: 0 0.25rem;
+        position: absolute;
+        font-family: var(--font-heading);
+        font-size: inherit;
+        text-align: center;
+    }
 
 
 
-#<?=$id;
-?>:hover .background-image,
-#<?=$id;
+    #<?= $id;
+        ?>:hover .background-image,
+    #<?= $id;
 
-?>:focus .background-image {
-    transform: scale(1.1);
-}
+        ?>:focus .background-image {
+        transform: scale(1.1);
+    }
 
-#<?=$id;
-?>:hover .background-image::before,
-#<?=$id;
+    #<?= $id;
+        ?>:hover .background-image::before,
+    #<?= $id;
 
-?>:focus .background-image::before {
-    opacity: 0.2;
-}
+        ?>:focus .background-image::before {
+        opacity: 0.2;
+    }
 </style>
