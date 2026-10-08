@@ -10,46 +10,73 @@
 
 $staffGroups = get_terms(array("taxonomy" => "staff-group", 'hide_empty' => false));
 
-$staff = [];
+if ($staffGroups) :
 
-foreach ($staffGroups as $staffGroup) {
-    $order = get_field("staff_group_order", "staff-group_" . $staffGroup->term_id);
+    $staff = [];
 
-    $args = array(
-        'post_type' => 'staff',
-        'posts_per_page' => -1,
-        "orderby" => "menu_order title",
-        "order" => "ASC",
-        "tax_query" => array(
-            array(
-                "taxonomy" => "staff-group",
-                "field" => "slug",
-                "terms" => $staffGroup->slug
+    foreach ($staffGroups as $staffGroup) {
+        $order = get_field("staff_group_order", "staff-group_" . $staffGroup->term_id);
+
+        $args = array(
+            'post_type' => 'staff',
+            'posts_per_page' => -1,
+            "orderby" => "menu_order title",
+            "order" => "ASC",
+            "tax_query" => array(
+                array(
+                    "taxonomy" => "staff-group",
+                    "field" => "slug",
+                    "terms" => $staffGroup->slug
+                )
             )
-        )
-    );
+        );
 
-    $staff[$order] = ["title" => $staffGroup->name, "staffMembers" => get_posts($args)];
-}
+        $staff[$order] = ["title" => $staffGroup->name, "staffMembers" => get_posts($args)];
+    }
 
-ksort($staff, SORT_NUMERIC);
+    ksort($staff, SORT_NUMERIC);
 
-$headerImg = get_field("staff_archive_header_image", "option") ? get_field("staff_archive_header_image", "option")["url"] : getDefaultFeaturedImage(true);
+    $headerImg = get_field("staff_archive_header_image", "option") ? get_field("staff_archive_header_image", "option")["url"] : getDefaultFeaturedImage(true);
 
-get_template_part("/template-parts/headers/page-header", null, array("headline" => "Meet Our Team", "headerImg" => $headerImg));
+    get_template_part("/template-parts/headers/page-header", null, array("headline" => "Meet Our Team", "headerImg" => $headerImg));
 
-foreach ($staff as $order => $group) : ?>
+    foreach ($staff as $order => $group) : ?>
 
-    <div class="<?php echo get_post_type(); ?>-category limit-width">
-        <h2 class="<?php echo get_post_type(); ?>-category-title has-text-decoration has-primary-background-color-after">
-            <?php echo $group['title']; ?>
-        </h2>
-        <div class="<?php echo get_post_type(); ?>-category-members">
-            <?php foreach ($group['staffMembers'] as $post) : setup_postdata($post);
-                get_template_part('/template-parts/cpts/staff/single/staff-member');
-            endforeach; ?>
-        </div>
+<div class="<?php echo get_post_type(); ?>-category limit-width">
+    <h2 class="<?php echo get_post_type(); ?>-category-title has-text-decoration has-primary-background-color-after">
+        <?php echo $group['title']; ?>
+    </h2>
+    <div class="<?php echo get_post_type(); ?>-category-members">
+        <?php foreach ($group['staffMembers'] as $post) : setup_postdata($post);
+                    get_template_part('/template-parts/cpts/staff/single/staff-member');
+                endforeach; ?>
     </div>
+</div>
 
 <?php
-endforeach;
+    endforeach;
+
+else :
+    // No staff groups found
+
+    $headerImg = get_field("staff_archive_header_image", "option") ? get_field("staff_archive_header_image", "option")["url"] : getDefaultFeaturedImage(true);
+
+    get_template_part("/template-parts/headers/page-header", null, array("headline" => "Meet Our Team", "headerImg" => $headerImg));
+
+
+    ?>
+
+<div class="<?php echo get_post_type(); ?>-category limit-width">
+
+    <div class="<?php echo get_post_type(); ?>-category-members">
+
+        <?php if (have_posts()) :
+                while (have_posts()) : the_post();
+                    get_template_part('/template-parts/cpts/staff/single/staff-member');
+                endwhile;
+            endif; ?>
+    </div>
+</div>
+
+
+<?php endif;
