@@ -8,8 +8,11 @@
   }
 
   .calendar-container {
-    .calendar-weekday-slick .simcal-day {
-      margin-inline: 5px;
+    background: transparent;
+    .calendar-weekday-slick .simcal-day-label {
+    @media screen and (min-width: $desktop) {
+        margin-inline: 5px;
+      }
     }
   }
 

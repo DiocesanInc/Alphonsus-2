@@ -513,10 +513,12 @@ jQuery(function ($) {
   // -----------------------------
   let slidesMobile = 3;
   let slidesLaptop = 5;
+  let slidesSmallDesktop = 7;
   let slidesDesktop = 7;
 
   if ($(".calendar-weekday-slick").parents(".homepage-section-cols").length) {
     slidesLaptop = 5;
+    slidesSmallDesktop = 4;
     slidesDesktop = 5;
   }
 
@@ -544,6 +546,12 @@ jQuery(function ($) {
       },
       {
         breakpoint: 1280,
+        settings: {
+          slidesToShow: slidesSmallDesktop,
+        },
+      },
+      {
+        breakpoint: 1520,
         settings: {
           slidesToShow: slidesDesktop,
         },

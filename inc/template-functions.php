@@ -170,3 +170,15 @@ add_action('template_redirect', function () {
         exit;
     }
 });
+
+/**
+ * Automatically add the menu item's text as its HTML title attribute
+ */
+add_filter( 'nav_menu_link_attributes', 'auto_add_title_attribute_to_menu', 10, 3 );
+function auto_add_title_attribute_to_menu( $atts, $item, $args ) {
+    // Only add a fallback title if one isn't explicitly defined in the dashboard
+    if ( empty( $atts['title'] ) && ! empty( $item->title ) ) {
+        $atts['title'] = strip_tags( $item->title );
+    }
+    return $atts;
+}

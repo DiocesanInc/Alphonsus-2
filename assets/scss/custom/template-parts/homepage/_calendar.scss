@@ -1,12 +1,13 @@
 .calendar-container {
   --inner-width: 90%;
   --weekly-padding-bottom: 110px;
-
-  margin-top: var(--homepage-section-spacing);
+  background: #f4f4f4;
+  margin-top: 0;
+  
   z-index: 1;
   position: relative;
   text-align: center;
-  padding: 0%;
+  padding: var(--homepage-section-spacing) 0 0 0;
   max-width: 100%;
   overflow: hidden;
   width: 100%;
@@ -77,7 +78,10 @@
 
     .simcal-day-label {
       min-height: 50px;
-      margin-inline: 5px;
+      margin-inline: 2.5vw;
+      @media screen and (min-width: 768px) {
+          margin-inline: 1.75vw;
+      }
       border-bottom: 0 !important;
 
       > span {
@@ -87,7 +91,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: transparent !important;
+        background-color: #fff !important;
         border: 1px solid var(--clr-primary);
         outline: 1px solid var(--clr-primary-st);
         outline-offset: 3px;
@@ -221,7 +225,17 @@
 
   .view-all-link-wrapper {
     margin-top: 30px;
+    margin-bottom: 30px;
+    .the-button {
+      background: #fff;
+    }
+    .the-button:hover, .the-button:focus, .wp-block-button__link.the-button:hover, .wp-block-button__link.the-button:focus {
+      background: var(--primary-button-background-color-hover, white);
+    }
   }
+}
+.content-slider-container + .calendar-container {
+margin-top: -30px;
 }
 
 // GROUPED CALENDARS

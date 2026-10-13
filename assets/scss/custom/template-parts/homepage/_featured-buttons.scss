@@ -116,8 +116,7 @@
 
     .featured-button-inner {
       display: flex;
-      // padding: 75px 20px;
-      padding: 8.25vh 1.75vw;
+      padding: 6.25vh 1.75vw;
       align-items: center;
       flex-direction: column;
       gap: 20px;
@@ -144,6 +143,7 @@
         font-size: clamp(32px, 4vw, 38px);
         text-align: center;
         padding-inline: 5px;
+        line-height: 1.25;
       }
       @media screen and (min-width: 1280px){
         .featured-button-title {

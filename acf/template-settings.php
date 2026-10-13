@@ -2064,7 +2064,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_65c1018d4481d',
-			'label' => 'Secondary Button',
+			'label' => 'Secondary Button (used on Hero and Content Slider)',
 			'name' => 'secondary_button',
 			'aria-label' => '',
 			'type' => 'group',
